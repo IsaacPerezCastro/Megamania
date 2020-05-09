@@ -20,6 +20,8 @@ void gotoxy(int x,int y){
       SetConsoleCursorPosition(hcon,dwPos);  
 }  
 void Letras(){
+	
+	
 	gotoxy(15,2);
 	cout<<"888b     d888                                                            d8b          ";
 	gotoxy(15,3);
@@ -44,6 +46,7 @@ void Letras(){
 	cout<<"                         Y88P                                                         ";
 }
 void Marco(){
+	
 	//Largo del marco X
 	int largo=25;
 	//Largo del marco Y
@@ -96,20 +99,59 @@ void Marco(){
 		}
 	}
  }
- //Iniar juego
- //Instruccines
- //Creditos
- //Salir
-int main(){
-	int tecla,op=0,arrabj=0;
-	int x=45,y=15;
-	int x1=44,y1=15;
-	bool run=true;
-	char flechita='>';
-	system("cls");
+void MenuOpciones(int x1,int y1,char flechita){
+ 	system("cls");
 	Marco();
 	Letras();
+	y1=15,x1=44;
 	gotoxy(45,15);
+	cout<<"Instrucciones";
+	gotoxy(45,17);
+	cout<<"Creditos";
+	gotoxy(45,19);
+	cout<<"Regresar";
+	gotoxy(x1,y1);
+	cout<<flechita;
+ }
+void Instrucciones(int x1,int y1,char flechita){
+ 
+ 	system("cls");
+	Marco();
+	Letras();
+	y1=15,x1=44;
+	gotoxy(45,15);
+	cout<<"Instrucciones";
+	gotoxy(45,16);
+	cout<<"Izquierda,derecha: Moverse";
+	gotoxy(45,17);
+	cout<<"Espacio: Disparar";
+	gotoxy(45,18);
+	cout<<"Enter: Pausa";
+	gotoxy(45,19);
+	cout<<"Regresar";
+	gotoxy(x1,y1);
+	cout<<flechita;
+ } 
+void Creditos(int x1,int y1,char flechita){
+ 
+ 	system("cls");
+	Marco();
+	Letras();
+	y1=15,x1=44;
+	gotoxy(45,15);
+	cout<<"Creditos";
+	gotoxy(45,16);
+	cout<<"Isaac Alejandro Perez Castro";
+	gotoxy(45,17);
+	cout<<"Abdiel Flores Gastelum";
+	gotoxy(45,19);
+	cout<<"Regresar";
+	gotoxy(x1,y1);
+	cout<<flechita;
+ }
+void Menu(int x1,int y1,char flechita){
+ 	 x1=44,y1=15;
+ 	gotoxy(45,15);
 	cout<<"Iniciar juego";
 	gotoxy(45,17);
 	cout<<"Opciones";
@@ -117,6 +159,36 @@ int main(){
 	cout<<"Salir";
 	gotoxy(x1,y1);
 	cout<<flechita;
+ }
+int main(){
+	int tecla,op=0,arrabj=0;
+	int x=45,y=15;
+	int x1=44,y1=15;
+	bool run=true,run2=true;
+	char flechita='>';
+	int pantalla=0;
+	do{
+	x1=44,y1=15;
+	x=45,y=15;
+	system("cls");
+	Marco();
+	Letras();
+	switch(pantalla){
+		case 0:
+			Menu(x1,y1,flechita);
+		break;
+		case 1:
+			MenuOpciones(x1,y1,flechita);
+		break;
+		case 2:
+			Creditos(x1,y1,flechita);
+		break;
+		case 3:
+			Instrucciones(x1,y1,flechita);
+		break;
+	}
+	
+		run=true;
 	do{
 		gotoxy(x1,y1);
 		cout<<flechita;
@@ -151,7 +223,55 @@ int main(){
             		break;
             	//Enter
 				case 13:
-            		getch();
+					if(y1==15){
+						if(pantalla==1){
+							pantalla=3;
+							run=false;
+						}	
+							
+					}
+
+					if(y1==17){
+						if(pantalla==0){
+							pantalla=1;
+							run=false;
+						}else if(pantalla==1){
+							pantalla=2;
+							run=false;
+						}	
+							
+					}
+					if(y1==19){
+						if(pantalla==0){
+							system("cls");
+							Marco();
+							Letras();
+							gotoxy(45,15);
+							cout<<"Adios :)";
+							return 0;
+							}else if(pantalla==1){
+							system("cls");
+							Marco();
+							Letras();
+							pantalla=0;
+							run=false;
+							}else if(pantalla==2){
+							system("cls");
+							Marco();
+							Letras();
+							pantalla=1;
+							run=false;
+							}else if(pantalla==3){
+							system("cls");
+							Marco();
+							Letras();
+							pantalla=1;
+							run=false;
+							}
+					}
+					
+					
+            		//getch();
             		break;
 	            	
 			}
@@ -166,5 +286,7 @@ int main(){
 			}
         }
 	}while(run);
+	
+	}while(run2);
 	return 0;
 }

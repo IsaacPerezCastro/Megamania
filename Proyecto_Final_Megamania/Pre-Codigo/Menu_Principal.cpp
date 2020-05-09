@@ -96,10 +96,6 @@ void Marco(){
 		}
 	}
  }
- //Iniar juego
- //Instruccines
- //Creditos
- //Salir
 int main(){
 	int tecla,op=0,arrabj=0;
 	int x=45,y=15;
