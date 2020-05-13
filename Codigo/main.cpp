@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <mmsystem.h>
+#include <cstdlib>
 #define _ARR  0x4800
 #define _ABJ  0x5000
 #define _IZQ  0x4b00
@@ -192,6 +194,7 @@ void Menu(int x1,int y1,char flechita){
 void jugador(){
 	system("cls");
 	system("color 07");
+	char soundfile[] = "LASRLIT3.wav";
 	char nave=219,bala=250;
 	char enemigos[20]={178};
 	int tecla,cont=0,contEnemigos=0;
@@ -222,6 +225,7 @@ void jugador(){
 		    		system("cls");
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
+			    	PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 					cout<<bala;
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 			    		system("cls");
@@ -288,7 +292,8 @@ int main(){
             	//Arriba
             	case 72:
             		//Validacion de flechita arriba
-            		if(y1>19){
+            		PlaySound((LPCSTR)"Menu", NULL, SND_FILENAME | SND_ASYNC ); 
+					if(y1>19){
 	            		y1=y1-2;
 	            		op--;
 					}
@@ -300,7 +305,8 @@ int main(){
             	//Abajo
             	case 80:
             		//Validacion de flechita abajo
-            		if(y1<23){
+            		PlaySound((LPCSTR)"Menu", NULL, SND_FILENAME | SND_ASYNC ); 
+					if(y1<23){
 						y1=y1+2;
 						op++;
 					}

@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <conio.h>
 #include <stdio.h>
 #include <time.h>
@@ -29,4 +29,4 @@ bool AjustarVentana(int Ancho, int Alto) {
 	SetConsoleWindowInfo(hConsola, TRUE, &Rect);
 	return TRUE;
 }
-
+*/
