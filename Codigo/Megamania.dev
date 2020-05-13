@@ -1,6 +1,6 @@
 [Project]
-FileName=Pro_Fin_Megamania.dev
-Name=Pro_Fin_Megamania
+FileName=Megamania.dev
+Name=Megamania
 Type=1
 Ver=2
 ObjFiles=
@@ -27,9 +27,9 @@ CommandLine=
 Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
-CompilerSet=3
-CompilerSettings=0000000100000000001000000
-UnitCount=3
+CompilerSet=0
+CompilerSettings=0000000000000000000000000
+UnitCount=2
 
 [VersionInfo]
 Major=1
@@ -51,16 +51,6 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=ClearScrean.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit2]
 FileName=main.cpp
 CompileCpp=1
 Folder=
@@ -70,8 +60,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit3]
-FileName=Menu_Principal.cpp
+[Unit2]
+FileName=Codigo_TamPantalla.cpp
 CompileCpp=1
 Folder=
 Compile=1

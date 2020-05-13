@@ -188,7 +188,7 @@ void Menu(int x1,int y1,char flechita){
 	gotoxy(x1,y1);
 	cout<<flechita;
  }
-//Menus
+//Jugador
 void jugador(){
 	system("cls");
 	system("color 07");
