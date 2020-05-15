@@ -8,12 +8,15 @@
 #include <ctype.h>
 #include <mmsystem.h>
 #include <cstdlib>
+#include <unistd.h>
+
 #define _ARR  0x4800
 #define _ABJ  0x5000
 #define _IZQ  0x4b00
 #define _DER  0x4d00
 #define _ESP   0x3920
 using namespace std;
+
 template <typename T>
 bool AjustarVentana(int Ancho, int Alto);
 bool AjustarVentana(int Ancho, int Alto) {
@@ -194,7 +197,7 @@ void Menu(int x1,int y1,char flechita){
 void jugador(){
 	system("cls");
 	system("color 07");
-	char soundfile[] = "LASRLIT3.wav";
+	//char soundfile[] = "LASRLIT3.wav";
 	char nave=219,bala=250;
 	char enemigos[20]={178};
 	int tecla,cont=0,contEnemigos=0;
@@ -225,7 +228,7 @@ void jugador(){
 		    		system("cls");
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
-			    	PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 					cout<<bala;
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 			    		system("cls");
@@ -242,7 +245,74 @@ void jugador(){
 	}
  }
 //Enemigo
+void EnemigosNivel1(){
+	system("cls");
+	system("color 07");
+	//char soundfile[] = "LASRLIT3.wav";
+	char nave=219,bala=250;
+	char enemigos[24]={178};
+	for (int f=0;f<30;f++){
+		enemigos[f]=178;
+	}
+	int tecla,cont=0,contEnemigos=0;
+	int xNave=0,yNave=0,x=0;
+	int xBala,yBala;
+	bool run=true,valBala=false;
+
+	while(run){
+		system("cls");
+		
+		
+		//Fila 1
+		xNave=x;
+		yNave=3;
+		for(int j=0;j<8;j++){
+			if(xNave>=0 and xNave<157){
+				gotoxy(xNave,yNave);
+				cout<<enemigos[j];
+			}
+		
+	
+		xNave=xNave-19;
+		}
+		
+		//Fila 2
+		xNave=x+5;
+		yNave=7;
+		for(int j=8;j<16;j++){
+		if(xNave>=0){
+				gotoxy(xNave,yNave);
+				cout<<enemigos[j];
+			}
+		xNave=xNave-19;
+		}
+		
+		//Fila 3
+		xNave=x;
+		yNave=11;
+		for(int j=16;j<24;j++){
+		if(xNave>=0){
+				gotoxy(xNave,yNave);
+				cout<<enemigos[j];
+			} 
+		xNave=xNave-19;
+
+		}
+		
+		
+		x=x+5;	
+		sleep(0);
+		usleep(100000);
+		
+		if(xNave>0){
+			x=0;
+		}
+		
+	}
+
+}
 int main(){
+	
 	AjustarVentana(160,40);  // Para otras de menor resolución
 	int tecla,op=0,arrabj=0;
 	int x=45,y=19;
@@ -271,7 +341,8 @@ int main(){
 		break;
 		case 4:
 			system("cls");
-			jugador();
+			//jugador();
+			EnemigosNivel1();
 		break;
 	}
 	
@@ -292,7 +363,7 @@ int main(){
             	//Arriba
             	case 72:
             		//Validacion de flechita arriba
-            		PlaySound((LPCSTR)"Menu", NULL, SND_FILENAME | SND_ASYNC ); 
+            		//PlaySound((LPCSTR)"Menu", NULL, SND_FILENAME | SND_ASYNC ); 
 					if(y1>19){
 	            		y1=y1-2;
 	            		op--;
@@ -305,7 +376,7 @@ int main(){
             	//Abajo
             	case 80:
             		//Validacion de flechita abajo
-            		PlaySound((LPCSTR)"Menu", NULL, SND_FILENAME | SND_ASYNC ); 
+            	//	PlaySound((LPCSTR)"Menu", NULL, SND_FILENAME | SND_ASYNC ); 
 					if(y1<23){
 						y1=y1+2;
 						op++;
@@ -377,3 +448,31 @@ int main(){
 	}while(run2);
 	return 0;
 }
+
+
+
+
+/*  
+
+	for(int j=0;j<30;j+=3){
+		xNave=x;
+		yNave=10;
+		gotoxy(xNave,yNave);
+		cout<<enemigos[j];
+		xNave=xNave+3;
+		
+		yNave=15;
+		xNave=x+5;
+		gotoxy(xNave,yNave);
+		cout<<enemigos[j+1];
+		xNave=xNave+3;
+		
+		xNave=x-5;
+		yNave=20;
+		gotoxy(xNave,yNave);
+		cout<<enemigos[j+2];
+		xNave=xNave+3;
+		
+
+
+*/
