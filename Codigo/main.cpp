@@ -18,6 +18,7 @@
 using namespace std;
 
 template <typename T>
+//Ajustes
 bool AjustarVentana(int Ancho, int Alto);
 bool AjustarVentana(int Ancho, int Alto) {
 	_COORD Coordenada;
@@ -48,6 +49,7 @@ void gotoxy(int x,int y){
       dwPos.Y= y;  
       SetConsoleCursorPosition(hcon,dwPos);  
 }  
+//Apariencia
 void Letras(){
 	
 	gotoxy(15,5);
@@ -193,21 +195,117 @@ void Menu(int x1,int y1,char flechita){
 	gotoxy(x1,y1);
 	cout<<flechita;
  }
-//Jugador
-void jugador(){
+//Enemigos Lvl.1
+ void enemigos(bool destruidos[21]){
+ 	char ene=220;
+ 	//Primera fila
+	if(destruidos[0]==true){//
+		gotoxy(10,2);
+		cout<<ene;
+	}
+	if(destruidos[1]==true){
+		gotoxy(38,2);
+		cout<<ene;
+	}
+	if(destruidos[2]==true){
+		gotoxy(66,2);
+		cout<<ene;
+	}
+	if(destruidos[3]==true){
+		gotoxy(94,2);
+		cout<<ene;
+	}
+	if(destruidos[4]==true){
+		gotoxy(122,2);
+		cout<<ene;
+	}
+	if(destruidos[5]==true){
+		gotoxy(150,2);
+		cout<<ene;
+	}
+	//Segunda fila
+	if(destruidos[6]==true){
+		gotoxy(17,4);
+		cout<<ene;
+	}
+	if(destruidos[7]==true){
+		gotoxy(31,4);
+		cout<<ene;
+	}
+	if(destruidos[8]==true){
+		gotoxy(45,4);
+		cout<<ene;
+	}
+	if(destruidos[9]==true){
+		gotoxy(59,4);
+		cout<<ene;
+	}
+	if(destruidos[10]==true){
+		gotoxy(73,4);
+		cout<<ene;
+	}
+	if(destruidos[11]==true){
+		gotoxy(87,4);
+		cout<<ene;
+	}
+	if(destruidos[12]==true){
+		gotoxy(101,4);
+		cout<<ene;
+	}
+	if(destruidos[13]==true){
+		gotoxy(115,4);
+		cout<<ene;
+	}
+	if(destruidos[14]==true){
+		gotoxy(129,4);
+		cout<<ene;
+	}
+ 	if(destruidos[15]==true){
+		gotoxy(143,4);
+		cout<<ene;
+	}
+ 	//Tercera fila
+	if(destruidos[16]==true){
+		gotoxy(24,6);
+		cout<<ene;
+	}
+	if(destruidos[17]==true){
+		gotoxy(52,6);
+		cout<<ene;
+	}
+	if(destruidos[18]==true){
+		gotoxy(80,6);
+		cout<<ene;
+	}
+	if(destruidos[19]==true){
+		gotoxy(108,6);
+		cout<<ene;
+	}
+	if(destruidos[20]==true){
+		gotoxy(136,6);
+		cout<<ene;
+	}
+ }
+//Enemigo
+void EnemigosNivel1(){
 	system("cls");
 	system("color 07");
 	//char soundfile[] = "LASRLIT3.wav";
+	                     /*                               FILAS                                        */
+	                     /*1*/                                   /*2*/                              /*3*/
+	bool destruidos[21]={true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
+	//Jugador
 	char nave=219,bala=250;
-	char enemigos[20]={178};
-	int tecla,cont=0,contEnemigos=0;
+	int tecla,cont=0;
 	int x=75,y=29;
 	int xBala,yBala;
-	bool run=true,valBala=false;
 	gotoxy(x,y);
 	cout<<nave;
+	//
+	int n=0;
+	bool run=true;
 	while(run){
-		
+		if(n==0){enemigos(destruidos);}
 		if (_kbhit())
         {
 			tecla = getch();
@@ -215,24 +313,126 @@ void jugador(){
 			switch(tecla){
             	//Derecha
             	case 77:
-            		x++;
+					if(x<159){
+						x++;
+					}
             		system("cls");
+            		enemigos(destruidos);
             		break;
             	//Izquierda
 				case 75:
-					x--;
+					if(x>0){
+						x--;
+					}
 					system("cls");
+					enemigos(destruidos);
             		break;
             	//Espacio
+            
 				case 32:
-		    		system("cls");
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
-			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 					cout<<bala;
+			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
-			    		system("cls");
+						system("cls");
 						gotoxy(xBala,yBala);
+//Validaciones
+						//Fila 1
+						if(yBala==2){
+							if(xBala==10){
+								destruidos[0]=false;
+								break;
+							}
+							if(xBala==38){
+								destruidos[1]=false;
+								break;
+							}
+							if(xBala==66){
+								destruidos[2]=false;
+								break;
+							}
+							if(xBala==94){
+								destruidos[3]=false;
+								break;
+							}
+							if(xBala==122){
+								destruidos[4]=false;
+								break;
+							}
+							if(xBala==150){
+								destruidos[5]=false;
+								break;
+							}
+						}
+						//Fila 2
+						if(yBala==4){
+							if(xBala==20){
+								destruidos[8]=false;
+								break;
+							}
+							if(xBala==40){
+								destruidos[9]=false;
+								break;
+							}
+							if(xBala==60){
+								destruidos[10]=false;
+								break;
+							}
+							if(xBala==80){
+								destruidos[11]=false;
+								break;
+							}
+							if(xBala==100){
+								destruidos[12]=false;
+								break;
+							}
+							if(xBala==120){
+								destruidos[13]=false;
+								break;
+							}
+							if(xBala==140){
+								destruidos[14]=false;
+								break;
+							}
+						}
+						//Fila 3
+						if(yBala==6){
+							if(xBala==10){
+								destruidos[15]=false;
+								break;
+							}
+							if(xBala==30){
+								destruidos[16]=false;
+								break;
+							}
+							if(xBala==50){
+								destruidos[17]=false;
+								break;
+							}
+							if(xBala==70){
+								destruidos[18]=false;
+								break;
+							}
+							if(xBala==90){
+								destruidos[19]=false;
+								break;
+							}
+							if(xBala==110){
+								destruidos[20]=false;
+								break;
+							}
+							if(xBala==130){
+								destruidos[21]=false;
+								break;
+							}
+							if(xBala==150){
+								destruidos[22]=false;
+								break;
+							}
+						}
+//de colociones
+						enemigos(destruidos);
 						cout<<bala;
 						gotoxy(x,y);
 						cout<<nave;
@@ -242,74 +442,8 @@ void jugador(){
     	}
     	gotoxy(x,y);
 		cout<<nave;
+		n++;
 	}
- }
-//Enemigo
-void EnemigosNivel1(){
-	system("cls");
-	system("color 07");
-	//char soundfile[] = "LASRLIT3.wav";
-	char nave=219,bala=250;
-	char enemigos[24]={178};
-	for (int f=0;f<30;f++){
-		enemigos[f]=178;
-	}
-	int tecla,cont=0,contEnemigos=0;
-	int xNave=0,yNave=0,x=0;
-	int xBala,yBala;
-	bool run=true,valBala=false;
-
-	while(run){
-		system("cls");
-		
-		
-		//Fila 1
-		xNave=x;
-		yNave=3;
-		for(int j=0;j<8;j++){
-			if(xNave>=0 and xNave<157){
-				gotoxy(xNave,yNave);
-				cout<<enemigos[j];
-			}
-		
-	
-		xNave=xNave-19;
-		}
-		
-		//Fila 2
-		xNave=x+5;
-		yNave=7;
-		for(int j=8;j<16;j++){
-		if(xNave>=0){
-				gotoxy(xNave,yNave);
-				cout<<enemigos[j];
-			}
-		xNave=xNave-19;
-		}
-		
-		//Fila 3
-		xNave=x;
-		yNave=11;
-		for(int j=16;j<24;j++){
-		if(xNave>=0){
-				gotoxy(xNave,yNave);
-				cout<<enemigos[j];
-			} 
-		xNave=xNave-19;
-
-		}
-		
-		
-		x=x+5;	
-		sleep(0);
-		usleep(100000);
-		
-		if(xNave>0){
-			x=0;
-		}
-		
-	}
-
 }
 int main(){
 	
@@ -448,31 +582,3 @@ int main(){
 	}while(run2);
 	return 0;
 }
-
-
-
-
-/*  
-
-	for(int j=0;j<30;j+=3){
-		xNave=x;
-		yNave=10;
-		gotoxy(xNave,yNave);
-		cout<<enemigos[j];
-		xNave=xNave+3;
-		
-		yNave=15;
-		xNave=x+5;
-		gotoxy(xNave,yNave);
-		cout<<enemigos[j+1];
-		xNave=xNave+3;
-		
-		xNave=x-5;
-		yNave=20;
-		gotoxy(xNave,yNave);
-		cout<<enemigos[j+2];
-		xNave=xNave+3;
-		
-
-
-*/
