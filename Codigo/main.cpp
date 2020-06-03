@@ -366,14 +366,155 @@ void contador(int tiempo){
 	color(9);
  }
 //Lvls
+void Nivel2(int puntuacion){
+	system("cls");
+	color(3);
+	gotoxy(80,37);
+	cout<<puntuacion;
+	color(9);
+	int tiempo=0,polvl1=0;
+	                     /*                               FILAS                                        */
+	                     /*1*/                                   /*2*/                              /*3*/
+	bool destruidos[21]={true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
+	//Jugador
+	char nave=219,bala=221;
+	int tecla,cont=0;
+	int x=75,y=29;
+	int xBala,yBala;
+	int n=0;
+	gotoxy(x,y);
+	cout<<nave;
+	contador(tiempo);
+	bool run=true;
+	while(run){
+		color(9);
+//			 vvvv   Modificar la velocidad del tiempo
+		if(n%2000==0){tiempo++;contador(tiempo);}
+
+		if (_kbhit())
+        {
+			tecla = getch();
+			//cout<<tecla;
+			switch(tecla){
+            	case 27:
+            		run=false;
+            		
+				//Derecha
+            	case 77:
+					if(x<159){
+						gotoxy(x-1,y);
+	            		cout<<" ";
+						x++;
+						
+					}
+        			gotoxy(x-1,y);
+            		cout<<" ";
+
+            		break;
+            	//Izquierda
+				case 75:
+					if(x>0){
+						gotoxy(x+1,y);
+	            		cout<<" ";
+						x--;
+					}
+					gotoxy(x+1,y);
+	            	cout<<" ";
+	            	
+            		break;
+            	//Espacio
+            
+				case 32:
+					color(4);
+			    	xBala=x,yBala=y;
+			    	gotoxy(xBala,yBala-1);
+					cout<<bala;
+					//char soundfile[] = "LASRLIT3.wav";
+			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+			    	for(int yBala=y-1;yBala>-2;--yBala){
+						contador(tiempo);
+						gotoxy(xBala,yBala+1);
+						cout<<" ";
+						if (_kbhit())
+				        {
+							tecla = getch();
+							//cout<<tecla;
+							switch(tecla){
+				            	case 27:
+				            		run=false;
+				            		
+										//Derecha
+						            	case 77:
+											if(x<159){
+												gotoxy(x-1,y);
+							            		cout<<" ";
+												x++;
+												
+											}
+						        			gotoxy(x-1,y);
+						            		cout<<" ";
+						
+						            		break;
+						            	//Izquierda
+										case 75:
+											if(x>0){
+												gotoxy(x+1,y);
+							            		cout<<" ";
+												x--;
+											}
+											gotoxy(x+1,y);
+							            	cout<<" ";
+							            	
+						            		break;
+						   	}
+						}     
+						color(4);
+						gotoxy(xBala,yBala);
+						cout<<bala;
+						color(9);
+						gotoxy(x,y);
+						cout<<nave;
+					}
+					system("cls");
+					contador(tiempo);
+
+					color(7);
+					gotoxy(80,37);
+					cout<<puntuacion;
+            		break;
+    		}
+    	}
+    	gotoxy(x,y);
+		cout<<nave;
+		n++;
+		color(7);
+		gotoxy(80,37);
+		cout<<puntuacion;
+		//Si destruye los 21 objetivos
+		if(cont==21){
+			run=false;
+			system("cls");
+			gotoxy(30,15);
+			cout<<"Avanzando al sig nivel";
+			getch();
+			system("cls");
+			Nivel2(puntuacion);
+		}
+		if (tiempo==91){
+			run=false;
+			system("cls");
+			gotoxy(30,15);
+			cout<<"Fin del juego";
+		}
+	}
+}
 void Nivel1(int puntuacion){
 	system("cls");
 	color(3);
 	gotoxy(80,37);
 	cout<<puntuacion;
 	color(9);
-	int tiempolvl1=0,polvl1=0;
-	//char soundfile[] = "LASRLIT3.wav";
+	int tiempo=0,polvl1=0;
 	                     /*                               FILAS                                        */
 	                     /*1*/                                   /*2*/                              /*3*/
 	bool destruidos[21]={true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
@@ -387,12 +528,12 @@ void Nivel1(int puntuacion){
 	cout<<nave;
 	//
 	int n=0;
-	contador(tiempolvl1);
+	contador(tiempo);
 	bool run=true;
 	while(run){
 		color(9);
 //			 vvvv   Modificar la velocidad de los enemigos
-		if(n%2000==0){tiempolvl1++;contador(tiempolvl1);}
+		if(n%2000==0){tiempo++;contador(tiempo);}
 		//if(n%500==0){x1++;system("cls");enemigos(destruidos,x1);}
 		if(n==0){enemigos(destruidos,x1);}
 		if (_kbhit())
@@ -400,6 +541,10 @@ void Nivel1(int puntuacion){
 			tecla = getch();
 			//cout<<tecla;
 			switch(tecla){
+	        	case 27:
+            		system("pause");
+            		run=false;
+            		Nivel2(puntuacion);            		
             	//Derecha
             	case 77:
 					if(x<159){
@@ -430,9 +575,10 @@ void Nivel1(int puntuacion){
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
 					cout<<bala;
+					//char soundfile[] = "LASRLIT3.wav";
 			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
-						contador(tiempolvl1);
+						contador(tiempo);
 						gotoxy(xBala,yBala+1);
 						cout<<" ";
 						color(4);
@@ -596,13 +742,46 @@ void Nivel1(int puntuacion){
 							}
 						}
 //de colociones
+						if (_kbhit())
+				        {
+							tecla = getch();
+							//cout<<tecla;
+							switch(tecla){
+				            	case 27:
+				            		run=false;
+				            		
+										//Derecha
+						            	case 77:
+											if(x<159){
+												gotoxy(x-1,y);
+							            		cout<<" ";
+												x++;
+												
+											}
+						        			gotoxy(x-1,y);
+						            		cout<<" ";
+						
+						            		break;
+						            	//Izquierda
+										case 75:
+											if(x>0){
+												gotoxy(x+1,y);
+							            		cout<<" ";
+												x--;
+											}
+											gotoxy(x+1,y);
+							            	cout<<" ";
+							            	
+						            		break;
+						   	}
+						}
 						enemigos(destruidos,x1);
 						cout<<bala;
 						gotoxy(x,y);
 						cout<<nave;
 					}
 					system("cls");
-					contador(tiempolvl1);
+					contador(tiempo);
 					enemigos(destruidos,x1);
 					color(7);
 					gotoxy(80,37);
@@ -622,11 +801,12 @@ void Nivel1(int puntuacion){
 			system("cls");
 			gotoxy(30,15);
 			cout<<"Avanzando al sig nivel";
-			getch();
+			Sleep(1500);
 			system("cls");
-			//Inserte el nivel 2 (puntaje incluido)
+			Nivel2(puntuacion);
 		}
-		if (tiempolvl1==91){
+		//Se acaba el tiempo
+		if (tiempo==91){
 			run=false;
 			system("cls");
 			gotoxy(30,15);
@@ -644,6 +824,8 @@ int main(){
 	int x1=44,y1=19;
 	bool run=true,run2=true;
 	char flechita='>';
+    char menu[] = "Sonidos/menu.wav";
+    char enter[] = "Sonidos/shineselect.wav";
 	int pantalla=0;
 	do{
 	x1=44,y1=19;
@@ -666,7 +848,7 @@ int main(){
 		break;
 		case 4:
 			system("cls");
-			//jugador();
+			
 			Nivel1(puntuacion);
 		break;
 	}
@@ -688,7 +870,7 @@ int main(){
             	//Arriba
             	case 72:
             		//Validacion de flechita arriba
-            		//PlaySound((LPCSTR)"Menu", NULL, SND_FILENAME | SND_ASYNC ); 
+            		//PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
 					if(y1>19){
 	            		y1=y1-2;
 	            		op--;
@@ -701,7 +883,7 @@ int main(){
             	//Abajo
             	case 80:
             		//Validacion de flechita abajo
-            	//	PlaySound((LPCSTR)"Menu", NULL, SND_FILENAME | SND_ASYNC ); 
+            		//PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
 					if(y1<23){
 						y1=y1+2;
 						op++;
@@ -710,6 +892,7 @@ int main(){
             		break;
             	//Enter
 				case 13:
+					//PlaySound((LPCSTR)enter, NULL, SND_FILENAME | SND_ASYNC ); 
 					if(y1==19){
 						if(pantalla==1){
 							pantalla=3;
