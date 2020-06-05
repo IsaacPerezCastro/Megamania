@@ -54,29 +54,31 @@ void color(int x){
 }
 //Apariencia
 void Letras(){
-	color(5);
-	gotoxy(15,5);
+	//color(5);
+	
+	gotoxy(17,2);
 	cout<<"                     888b     d888                                                            d8b          ";
-	gotoxy(15,6);
+	gotoxy(17,3);
 	cout<<"                     8888b   d8888                                                            Y8P          ";
-	gotoxy(15,7);
+	gotoxy(17,4);
 	cout<<"                     88888b.d88888                                                                         ";
-	gotoxy(15,8);
+	gotoxy(17,5);
 	cout<<"                     888Y88888P888  .d88b.   .d88b.   8888b.  88888b.d88b.   8888b.  88888b.  888  8888b.  ";
-	gotoxy(15,9);
+	gotoxy(17,6);
 	cout<<"                     888 Y888P 888 d8P  Y8b d88P 88b      88b 888  888  88b      88b 888  88b 888      88b ";
-	gotoxy(15,10);
+	gotoxy(17,7);
 	cout<<"                     888  Y8P  888 88888888 888  888 .d888888 888  888  888 .d888888 888  888 888 .d888888 ";
-	gotoxy(15,11);
+	gotoxy(17,8);
 	cout<<"                     888       888   Y8888   Y888888  Y888888 888  888  888  Y888888 888  888 888  Y888888 ";
-	gotoxy(15,12);
+	gotoxy(17,9);
 	cout<<"                     888       888   Y8888    Y88888  Y888888 888  888  888  Y888888 888  888 888  Y888888 ";
-	gotoxy(15,13);
+	gotoxy(17,10);
 	cout<<"                                                 888                                                       ";
-	gotoxy(15,14);
+	gotoxy(17,11);
 	cout<<"                                            Y8b d88P                                                       ";
-	gotoxy(15,15);
+	gotoxy(17,12);
 	cout<<"                                              Y88P                                                         ";
+
 }
 void Marco(){
 	color(3);
@@ -137,34 +139,90 @@ void MenuOpciones(int x1,int y1,char flechita){
  	system("cls");
 	Marco();
 	Letras();
-	color(5);
+	system("color 07");
 	y1=19,x1=44;
-	gotoxy(45,19);
-	cout<<"Instrucciones";
-	gotoxy(45,21);
-	cout<<"Creditos";
-	gotoxy(45,23);
-	cout<<"Regresar";
+	
+	gotoxy(48,16);
+ 	cout<<"  ___           _                       _                       ";
+ 	gotoxy(48,17);
+ 	cout<<" |_ _|_ __  ___| |_ _ __ _   _  ___ ___(_) ___  _ __   ___  ___ ";
+ 	gotoxy(48,18);
+ 	cout<<"  | || '_  / __| __| '__| | | |/ __/ __| |/ _  | '_  /  _  |  __|";
+ 	gotoxy(48,19);
+ 	cout<<"  | || | |  __ | |_| |  | |_| | (_| (__| | (_) | | | |  __/ __    " ;
+ 	gotoxy(48,20);
+ 	cout<<" |___|_| |_|___/ __|_|    __,_| ___ ___|_| ___/|_| |_| ___||___/";
+ 	
+ 	gotoxy(60,23);
+ 	cout<<"   ____              _ _ _            ";
+ 	gotoxy(60,24);
+ 	cout<<"  / ___|_ __ ___  __| (_) |_ ___  ___ ";
+ 	gotoxy(60,25);
+ 	cout<<" | |   | '__/ _  / _` | | __/ _  / __|";
+ 	gotoxy(60,26);
+ 	cout<<" | |___| | |  __/ (_| | | || (_)  __    ";
+ 	gotoxy(60,27);
+ 	cout<<"   ____|_|   ___| __,_|_| __ ___/|___/  ";
+ 	
+
+ 	
+ 	gotoxy(59,30);
+ 	cout<<"  ____                                     ";
+ 	gotoxy(59,31);
+ 	cout<<" |  _   ___  __ _ _ __ ___  ___  __ _ _ __ ";
+ 	gotoxy(59,32);
+ 	cout<<" | |_) / _  / _` | '__/ _  / __|/ _` | '__|";
+ 	gotoxy(59,33);
+ 	cout<<" |    <  __/ (_| | | |  __/ __   (_| | |   ";
+ 	gotoxy(59,34);
+ 	cout<<" |_| |_ ___| __, |_|   ___||___/ __,_|_|   ";
+ 	gotoxy(59,35);
+ 	cout<<"            |___/                          ";
+ 	
+ 
 	gotoxy(x1,y1);
 	cout<<flechita;
  }
 void Instrucciones(int x1,int y1,char flechita){
  
  	system("cls");
+ 	
 	Marco();
 	Letras();
-	color(3);
+	system("color 05");
 	y1=19,x1=44;
-	gotoxy(45,19);
-	cout<<"Instrucciones";
-	gotoxy(45,20);
+	
+	gotoxy(48,16);
+ 	cout<<"  ___           _                       _                       ";
+ 	gotoxy(48,17);
+ 	cout<<" |_ _|_ __  ___| |_ _ __ _   _  ___ ___(_) ___  _ __   ___  ___ ";
+ 	gotoxy(48,18);
+ 	cout<<"  | || '_  / __| __| '__| | | |/ __/ __| |/ _  | '_  /  _  |  __|";
+ 	gotoxy(48,19);
+ 	cout<<"  | || | |  __ | |_| |  | |_| | (_| (__| | (_) | | | |  __/ __    " ;
+ 	gotoxy(48,20);
+ 	cout<<" |___|_| |_|___/ __|_|    __,_| ___ ___|_| ___/|_| |_| ___||___/";
+	
+	gotoxy(55,25);
 	cout<<"Izquierda,derecha: Moverse";
-	gotoxy(45,21);
+	gotoxy(55,26);
 	cout<<"Espacio: Disparar";
-	gotoxy(45,22);
+	gotoxy(55,27);
 	cout<<"Enter: Pausa";
-	gotoxy(45,23);
-	cout<<"Regresar";
+	
+	
+	gotoxy(59,31);
+ 	cout<<"  ____                                     ";
+ 	gotoxy(59,32);
+ 	cout<<" |  _   ___  __ _ _ __ ___  ___  __ _ _ __ ";
+ 	gotoxy(59,33);
+ 	cout<<" | |_) / _  / _` | '__/ _  / __|/ _` | '__|";
+ 	gotoxy(59,34);
+ 	cout<<" |    <  __/ (_| | | |  __/ __   (_| | |   ";
+ 	gotoxy(59,35);
+ 	cout<<" |_| |_ ___| __, |_|   ___||___/ __,_|_|   ";
+ 	gotoxy(59,36);
+ 	cout<<"            |___/                          ";
 	gotoxy(x1,y1);
 	cout<<flechita;
 } 
@@ -173,28 +231,114 @@ void Creditos(int x1,int y1,char flechita){
  	system("cls");
 	Marco();
 	Letras();
-	color(8);
-	y1=15,x1=44;
-	gotoxy(45,19);
-	cout<<"Creditos";
-	gotoxy(45,20);
+	system("color 02");
+	y1=19,x1=44;
+	gotoxy(60,16);
+ 	cout<<"   ____              _ _ _            ";
+ 	gotoxy(60,17);
+ 	cout<<"  / ___|_ __ ___  __| (_) |_ ___  ___ ";
+ 	gotoxy(60,18);
+ 	cout<<" | |   | '__/ _  / _` | | __/ _  / __|";
+ 	gotoxy(60,19);
+ 	cout<<" | |___| | |  __/ (_| | | || (_)  __    ";
+ 	gotoxy(60,20);
+ 	cout<<"   ____|_|   ___| __,_|_| __ ___/|___/  ";
+ 	gotoxy(60,24);
+	cout<<"Universidad Autonoma de Baja California Sur";
+ 	gotoxy(60,25);
+	cout<<"Departamento Academico de Sistemas Computacionales";
+	gotoxy(60,26);
+	cout<<"Prof: Ing. Jonathan Soto";
+	gotoxy(60,27);
 	cout<<"Isaac Alejandro Perez Castro";
-	gotoxy(45,21);
+	gotoxy(60,28);
 	cout<<"Abdiel Flores Gastelum";
 	gotoxy(45,23);
-	cout<<"Regresar";
+	
+	
+	gotoxy(9,31);
+ 	cout<<" _   _   _ ____   ____ ____  ";
+ 	gotoxy(9,32);
+ 	cout<<"| | | | / | __ ) / ___/ ___| ";
+ 	gotoxy(9,33);
+ 	cout<<"| | | |/ _|  _  | |    ___   ";
+ 	gotoxy(9,34);
+ 	cout<<"| |_| / __| |_) | |___ ___)|";
+ 	gotoxy(9,35);
+ 	cout<<"  ___/_/  |____/  ____|____/";
+
+	gotoxy(128,31);
+ 	cout<<"  ____    _  ____   ____ ";
+ 	gotoxy(128,32);
+ 	cout<<" |  _    /  / ___|/ ___|";
+ 	gotoxy(128,33);
+ 	cout<<" | | | |/ _|___  | |    ";
+ 	gotoxy(128,34);
+ 	cout<<" | |_| / __ ___) | |___ ";
+ 	gotoxy(128,35);
+ 	cout<<" |____/_/  |____/  ____|";
+	
+	gotoxy(59,31);
+ 	cout<<"  ____                                     ";
+ 	gotoxy(59,32);
+ 	cout<<" |  _   ___  __ _ _ __ ___  ___  __ _ _ __ ";
+ 	gotoxy(59,33);
+ 	cout<<" | |_) / _  / _` | '__/ _  / __|/ _` | '__|";
+ 	gotoxy(59,34);
+ 	cout<<" |    <  __/ (_| | | |  __/ __   (_| | |   ";
+ 	gotoxy(59,35);
+ 	cout<<" |_| |_ ___| __, |_|   ___||___/ __,_|_|   ";
+ 	gotoxy(59,36);
+ 	cout<<"            |___/                          ";
 	gotoxy(x1,y1);
 	cout<<flechita;
+
  }
 void Menu(int x1,int y1,char flechita){
 	
  	x1=44,y1=19;
- 	gotoxy(45,19);
-	cout<<"Iniciar juego";
-	gotoxy(45,21);
-	cout<<"Opciones";
-	gotoxy(45,23);
-	cout<<"Salir";
+ 	gotoxy(62,16);
+ 	cout<<"  ___       _      _             ";
+ 	gotoxy(62,17);
+ 	cout<<" |_ _|_ __ (_) ___(_) __ _ _ __  ";
+ 	gotoxy(62,18);
+ 	cout<<"  | || '_  | |/ __| |/ _` | '__|  ";
+ 	gotoxy(62,19);
+ 	cout<<"  | || | | | | (__| | (_| | |   ";
+ 	gotoxy(62,20);
+ 	cout<<" |___|_| |_|_| ___|_| __,_|_|    ";
+ //	cout<<""<<endl;
+ //	cout<<""<<endl;
+ //	cout<<""<<endl;
+//	cout<<"Iniciar juego";
+    gotoxy(57,23);
+ 	cout<<"   ___             _                      ";
+ 	gotoxy(57,24);
+ 	cout<<"  / _   _ __   ___(_) ___  _ __   ___  ___ ";
+ 	gotoxy(57,25);
+ 	cout<<" | | | | '_   / __| |/ _  | '_   / _  / __|";
+ 	gotoxy(57,26);
+ 	cout<<" | |_| | |_) | (__| | (_) | | | |  __/ __     ";
+ 	gotoxy(57,27);
+ 	cout<<"   ___/| .__/  ___|_| ___/|_| |_| ___||___/";
+ 	gotoxy(57,28);
+ 	cout<<"       |_|                                 ";
+ 	
+ 	gotoxy(66,31);
+ 	cout<<"  ____        _ _      ";
+ 	gotoxy(66,32);
+ 	cout<<" / ___|  __ _| (_)_ __ ";
+ 	gotoxy(66,33);
+ 	cout<<"  ___   / _` | | | '__|";
+ 	gotoxy(66,34);
+ 	cout<<"  ___) | (_| | | | |   ";
+ 	gotoxy(66,35);
+ 	cout<<" |____/  __,_|_|_|_|   ";
+
+	gotoxy(45,27);
+//	cout<<"Opciones";
+	gotoxy(45,28);
+//	cout<<"Salir";
 	gotoxy(x1,y1);
 	cout<<flechita;
  }
@@ -232,7 +376,7 @@ void contador(int tiempo){
 //Enemigos Lvl.1
  void enemigos(bool destruidos[21], int x){
  	color(14);
-	 char ene=220;
+	char ene=220;
  	//Primera fila
 	if(destruidos[0]==true){
 		if(x+10<150){
@@ -365,6 +509,116 @@ void contador(int tiempo){
 	}
 	color(9);
  }
+//Enemigos Lvl.2
+void enemigos2(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x6,int x7,int x8,int x9,int x10){
+	color(14);
+	char ene=220;
+	if(destruidos[0]==true){
+		if(x+10<150){
+			gotoxy(x+9,y);
+			cout<<" ";
+			gotoxy(x+10,y);
+			cout<<ene;
+			
+		}
+	}
+	if(destruidos[1]==true){
+		if(x2+10<150){
+			if(x2+10>10){
+				gotoxy(x2+10,y);
+				cout<<ene;
+				gotoxy(x2+9,y);
+				cout<<" ";
+			}
+		}
+	}	
+	
+	if(destruidos[2]==true){
+		if(x3+10<150){
+			if(x3+10>10){
+				gotoxy(x3+10,y);
+				cout<<ene;
+				gotoxy(x3+9,y);
+				cout<<" ";
+			}
+		}
+	}
+	
+	if(destruidos[3]==true){
+		if(x4+10<150){
+			if(x4+10>10){
+				gotoxy(x4+10,y);
+				cout<<ene;
+				gotoxy(x4+9,y);
+				cout<<" ";
+			}
+		}
+	}
+	
+	if(destruidos[4]==true){
+		if(x5+10<150){
+			if(x5+10>10){
+				gotoxy(x5+10,y);
+				cout<<ene;
+				gotoxy(x5+9,y);
+				cout<<" ";
+			}
+		}
+	}
+	if(destruidos[5]==true){
+		if(x6+10<150){
+			if(x6+10>10){
+				gotoxy(x6+10,y);
+				cout<<ene;
+				gotoxy(x6+9,y);
+				cout<<" ";
+			}
+		}
+	}
+	
+	if(destruidos[6]==true){
+		if(x7+10<150){
+			if(x7+10>10){
+				gotoxy(x7+10,y);
+				cout<<ene;
+				gotoxy(x7+9,y);
+				cout<<" ";
+			}
+		}
+	}
+	if(destruidos[7]==true){
+		if(x8+10<150){
+			if(x8+10>10){
+				gotoxy(x8+10,y);
+				cout<<ene;
+				gotoxy(x8+9,y);
+				cout<<" ";
+			}
+		}
+	}
+	if(destruidos[8]==true){
+		if(x9+10<150){
+			if(x9+10>10){
+				gotoxy(x9+10,y);
+				cout<<ene;
+				gotoxy(x9+9,y);
+				cout<<" ";
+			}
+		}
+	}
+	if(destruidos[9]==true){
+		if(x10+10<150){
+			if(x10+10>10){
+				gotoxy(x10+10,y);
+				cout<<ene;
+				gotoxy(x10+9,y);
+				cout<<" ";
+			}
+		}
+	}
+ 	gotoxy(149,y);
+	cout<<" ";
+}
 //Lvls
 void Nivel2(int puntuacion){
 	system("cls");
@@ -372,25 +626,50 @@ void Nivel2(int puntuacion){
 	gotoxy(80,37);
 	cout<<puntuacion;
 	color(9);
-	int tiempo=0,polvl1=0;
-	                     /*                               FILAS                                        */
-	                     /*1*/                                   /*2*/                              /*3*/
-	bool destruidos[21]={true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
+	int tiempo=0;
+	bool destruidos[10]={true,true,true,true,true,true,true,true,true,true};
 	//Jugador
 	char nave=219,bala=221;
 	int tecla,cont=0;
 	int x=75,y=29;
+	int y1=6;
+	int x1=0,x2=-10,x3=-20,x4=-30,x5=-40,x6=-50,x7=-60,x8=-70,x9=-80,x10=-90;
+	bool vuelta=true;
 	int xBala,yBala;
 	int n=0;
 	gotoxy(x,y);
 	cout<<nave;
 	contador(tiempo);
+	enemigos2(destruidos,x1,y1,x2, x3, x4, x5, x6, x7,x8, x9, x10);
 	bool run=true;
 	while(run){
 		color(9);
 //			 vvvv   Modificar la velocidad del tiempo
-		if(n%2000==0){tiempo++;contador(tiempo);}
-
+		if(n%2000==0){tiempo++;contador(tiempo);gotoxy(33,30);cout<<tiempo;}
+//			 vvvv   Modificar la velocidad del los enemigos
+		if(n%180==0){
+			x1++;
+			x2++;
+			x3++;
+			x4++;
+			x5++;
+			x6++;
+			x7++;
+			x8++;
+			x9++;
+			x10++;
+			enemigos2(destruidos,x1,y1,x2, x3, x4, x5, x6, x7,x8, x9, x10);
+		}
+		if(x1+10>150){x1=0;}
+		if(x2+10>150){x2=0;}
+		if(x3+10>150){x3=0;}
+		if(x4+10>150){x4=0;}
+		if(x5+10>150){x5=0;}
+		if(x6+10>150){x6=0;}
+		if(x7+10>150){x7=0;}
+		if(x8+10>150){x8=0;}
+		if(x9+10>150){x9=0;}
+		if(x10+10>150){x10=0;}
 		if (_kbhit())
         {
 			tecla = getch();
@@ -433,6 +712,92 @@ void Nivel2(int puntuacion){
 			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 						contador(tiempo);
+						if(vuelta==true){
+							vuelta=false;
+							x1++;
+							x2++;
+							x3++;
+							x4++;
+							x5++;
+							x6++;
+							x7++;
+							x8++;
+							x9++;
+							x10++;
+						}else{
+							vuelta=true;
+						}
+						enemigos2(destruidos,x1,y1,x2, x3, x4, x5, x6, x7,x8, x9, x10);
+					   	if(yBala==y1){
+					   		if(xBala==x1+10 or xBala==x1+11){
+					   			destruidos[0]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x2+10 or xBala==x2+11){
+					   			destruidos[1]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x3+10 or xBala==x3+11){
+					   			destruidos[2]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x4+10 or xBala==x4+11){
+					   			destruidos[3]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x5+10 or xBala==x5+11){
+					   			destruidos[4]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x6+10 or xBala==x6+11){
+					   			destruidos[5]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x7+10 or xBala==x7+11){
+					   			destruidos[6]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x8+10 or xBala==x8+11){
+					   			destruidos[7]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x9+10 or xBala==x9+11){
+					   			destruidos[8]=false;
+					   			puntuacion+=50;
+					   			break;
+							}
+						}
+						if(yBala==y1){
+					   		if(xBala==x10+10){
+					   			destruidos[9]=false;
+					   			puntuacion+=50;
+							}
+					   		break;
+						}
 						gotoxy(xBala,yBala+1);
 						cout<<" ";
 						if (_kbhit())
@@ -491,7 +856,7 @@ void Nivel2(int puntuacion){
 		gotoxy(80,37);
 		cout<<puntuacion;
 		//Si destruye los 21 objetivos
-		if(cont==21){
+		if(cont==10){
 			run=false;
 			system("cls");
 			gotoxy(30,15);
@@ -500,7 +865,7 @@ void Nivel2(int puntuacion){
 			system("cls");
 			Nivel2(puntuacion);
 		}
-		if (tiempo==91){
+		if (tiempo==92){
 			run=false;
 			system("cls");
 			gotoxy(30,15);
@@ -872,7 +1237,7 @@ int main(){
             		//Validacion de flechita arriba
             		//PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
 					if(y1>19){
-	            		y1=y1-2;
+	            		y1=y1-7;
 	            		op--;
 					}
 					arrabj=0;
@@ -884,8 +1249,8 @@ int main(){
             	case 80:
             		//Validacion de flechita abajo
             		//PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
-					if(y1<23){
-						y1=y1+2;
+					if(y1<33){
+						y1=y1+7;
 						op++;
 					}
 					arrabj=1;
@@ -904,7 +1269,7 @@ int main(){
 						}
 							
 					}
-					if(y1==21){
+					if(y1==26){
 						if(pantalla==0){
 							pantalla=1;
 							run=false;
@@ -914,7 +1279,7 @@ int main(){
 						}	
 							
 					}
-					if(y1==23){
+					if(y1==33){
 						if(pantalla==0){
 							system("cls");
 							gotoxy(45,19);
@@ -942,11 +1307,11 @@ int main(){
 			}
 			//Limpiar flecha anterior
 			if(arrabj==1){
-				gotoxy(x1,y1-2);
+				gotoxy(x1,y1-7);
 				cout<<" ";
 				
 			}else{
-				gotoxy(x1,y1+2);
+				gotoxy(x1,y1+7);
 				cout<<" ";
 			}
         }
