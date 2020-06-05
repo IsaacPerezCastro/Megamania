@@ -585,11 +585,11 @@ int main(){
 			}
 			//Limpiar flecha anterior
 			if(arrabj==1){
-				gotoxy(x1,y1-2);
+				gotoxy(x1,y1-7);
 				cout<<" ";
 				
 			}else{
-				gotoxy(x1,y1+2);
+				gotoxy(x1,y1+7);
 				cout<<" ";
 			}
         }
