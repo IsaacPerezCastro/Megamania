@@ -183,8 +183,79 @@ void MenuOpciones(int x1,int y1,char flechita){
 	gotoxy(x1,y1);
 	cout<<flechita;
  }
+ void MovimientoInst(bool ins){
+ 	int xizq=54,xder=100,ybala=28,tecla,n=0;
+ 	int aux1=54,aux2=100,aux3=28,contador=0,cont2=0;
+ 	char nave=219;
+ 	char bala=250;
+ 	tecla = 0;
+ 	while(ins==true){
+		
+		if(n==100000000){
+	
+		gotoxy(xizq+1,29);
+		cout<<" ";
+		gotoxy(xizq-5,29);
+		cout<<"     ";
+		gotoxy(xizq,29);
+		cout<<nave;
+		
+		
+		gotoxy(xder-1,29);
+		cout<<" ";
+		gotoxy(xder+1,29);
+		cout<<"     ";
+		gotoxy(xder,29);
+		cout<<nave;
+		
+		if(ybala<28){
+		gotoxy(76,ybala+1);
+		cout<<" ";
+		gotoxy(76,ybala-1);
+		cout<<" ";
+		cout<<" ";
+		
+		gotoxy(76,ybala);
+		cout<<bala;	
+		}else{
+		gotoxy(76,ybala);
+		cout<<bala;
+		gotoxy(76,ybala-4);
+		cout<<" ";	
+		}
+		
+		
+		
+		xizq--;
+		xder++;
+		ybala--;
+		contador++;
+		
+		if(contador==5){
+			
+			xizq=aux1;
+			xder=aux2;
+			ybala=aux3;
+			contador=0;
+			cont2++;
+		}		
+		
+		n=0;
+		}
+		n++;
+		
+	if(cont2==5){
+		ins=false;
+	}
+	}
+ 	
+ }
 void Instrucciones(int x1,int y1,char flechita){
- 
+ 	int xizq=54,xder=100,ybala=28,tecla,n=0;
+ 	int aux1=54,aux2=100,aux3=28,contador=0;
+ 	char nave=219;
+ 	char bala=250;
+ 	bool ins=true;
  	system("cls");
  	
 	Marco();
@@ -192,23 +263,22 @@ void Instrucciones(int x1,int y1,char flechita){
 	system("color 05");
 	y1=19,x1=44;
 	
-	gotoxy(48,16);
- 	cout<<"  ___           _                       _                       ";
- 	gotoxy(48,17);
+	gotoxy(48,14);
+ 	cout<<"  __            _                       _                       ";
+ 	gotoxy(48,15);
  	cout<<" |_ _|_ __  ___| |_ _ __ _   _  ___ ___(_) ___  _ __   ___  ___ ";
- 	gotoxy(48,18);
+ 	gotoxy(48,16);
  	cout<<"  | || '_  / __| __| '__| | | |/ __/ __| |/ _  | '_  /  _  |  __|";
- 	gotoxy(48,19);
+ 	gotoxy(48,17);
  	cout<<"  | || | |  __ | |_| |  | |_| | (_| (__| | (_) | | | |  __/ __    " ;
- 	gotoxy(48,20);
+ 	gotoxy(48,18);
  	cout<<" |___|_| |_|___/ __|_|    __,_| ___ ___|_| ___/|_| |_| ___||___/";
 	
-	gotoxy(55,25);
-	cout<<"Izquierda,derecha: Moverse";
-	gotoxy(55,26);
-	cout<<"Espacio: Disparar";
-	gotoxy(55,27);
-	cout<<"Enter: Pausa";
+	
+	gotoxy(49,21);
+	cout<<"  Flecha                Espacio                  Flecha";
+	gotoxy(49,22);
+	cout<<"    <--                   ---                      -->";
 	
 	
 	gotoxy(59,31);
@@ -223,8 +293,23 @@ void Instrucciones(int x1,int y1,char flechita){
  	cout<<" |_| |_ ___| __, |_|   ___||___/ __,_|_|   ";
  	gotoxy(59,36);
  	cout<<"            |___/                          ";
+ 	y1=34,x1=44;
 	gotoxy(x1,y1);
 	cout<<flechita;
+	
+	gotoxy(76,29);
+	cout<<nave;
+		
+	MovimientoInst(ins);
+	
+	
+	
+	
+	
+	
+	
+	
+	
 } 
 void Creditos(int x1,int y1,char flechita){
  
@@ -232,7 +317,7 @@ void Creditos(int x1,int y1,char flechita){
 	Marco();
 	Letras();
 	system("color 02");
-	y1=19,x1=44;
+
 	gotoxy(60,16);
  	cout<<"   ____              _ _ _            ";
  	gotoxy(60,17);
@@ -290,6 +375,7 @@ void Creditos(int x1,int y1,char flechita){
  	cout<<" |_| |_ ___| __, |_|   ___||___/ __,_|_|   ";
  	gotoxy(59,36);
  	cout<<"            |___/                          ";
+ 	
 	gotoxy(x1,y1);
 	cout<<flechita;
 
@@ -1214,9 +1300,13 @@ int main(){
 	
 		run=true;
 	do{
+		if(pantalla==3){
+			y1=34,x1=44;	
+		}
 		gotoxy(x1,y1);
 		cout<<flechita;
 		gotoxy(x1,y1);
+		
 		//Lectura de tecla precionada
 		if (_kbhit())
         {
@@ -1230,11 +1320,14 @@ int main(){
             	case 72:
             		//Validacion de flechita arriba
             		//PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
-					if(y1>19){
+            		if(pantalla!=3){
+            			if(y1>19){
 	            		y1=y1-7;
 	            		op--;
 					}
 					arrabj=0;
+					}
+					
             		break;
             	//Izquierda
 				case 75:
@@ -1243,11 +1336,16 @@ int main(){
             	case 80:
             		//Validacion de flechita abajo
             		//PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
+            		if(pantalla!=3){
 					if(y1<33){
 						y1=y1+7;
 						op++;
 					}
 					arrabj=1;
+					
+					}
+            		
+					
             		break;
             	//Enter
 				case 13:
@@ -1256,6 +1354,7 @@ int main(){
 						if(pantalla==1){
 							pantalla=3;
 							run=false;
+							
 						}	
 						if(pantalla==0){
 							pantalla=4;
@@ -1287,13 +1386,13 @@ int main(){
 							system("cls");
 							pantalla=1;
 							run=false;
-							}else if(pantalla==3){
+							}
+					}
+					if(y1==34){
 							system("cls");
 							pantalla=1;
 							run=false;
-							}
 					}
-					
 					
             		//getch();
             		break;
