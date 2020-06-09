@@ -46,7 +46,7 @@ void color(int x){
 }
 //Apariencia
 void Letras(){
-	//color(7);	
+	color(3);	
 	gotoxy(17,2);
 	cout<<"                     888b     d888                                                            d8b          ";
 	gotoxy(17,3);
@@ -129,7 +129,7 @@ void MenuOpciones(int x1,int y1,char flechita){
  	system("cls");
 	Marco();
 	Letras();
-	system("color 07");
+	color(7);
 	y1=19,x1=44;
 	gotoxy(48,16);
  	cout<<"  ___           _                       _                       ";
@@ -204,20 +204,16 @@ void MovimientoInst(bool ins){
 		xder++;
 		ybala--;
 		contador++;
-		
 		if(contador==5){
-			
 			xizq=aux1;
 			xder=aux2;
 			ybala=aux3;
 			contador=0;
 			cont2++;
 		}		
-		
 		n=0;
 		}
 		n++;
-		
 	if(cont2==5){
 		ins=false;
 	}
@@ -232,7 +228,7 @@ void Instrucciones(int x1,int y1,char flechita){
  	system("cls");
 	Marco();
 	Letras();
-	system("color 05");
+	color(5);
 	y1=19,x1=44;
 	gotoxy(48,14);
  	cout<<"  __            _                       _                       ";
@@ -271,7 +267,7 @@ void Creditos(int x1,int y1,char flechita){
  	system("cls");
 	Marco();
 	Letras();
-	system("color 02");
+	color(2);
 	gotoxy(60,16);
  	cout<<"   ____              _ _ _            ";
  	gotoxy(60,17);
@@ -329,7 +325,8 @@ void Creditos(int x1,int y1,char flechita){
 	cout<<flechita;
  }
 void Menu(int x1,int y1,char flechita){
- 	x1=44,y1=19;
+ 	color(7);
+	x1=44,y1=19;
  	gotoxy(62,16);
  	cout<<"  ___       _      _             ";
  	gotoxy(62,17);
@@ -366,6 +363,28 @@ void Menu(int x1,int y1,char flechita){
 	gotoxy(x1,y1);
 	cout<<flechita;
  }
+void GameOver(int puntuacion){
+	system("cls");
+	color(4);	
+	gotoxy(15,9);
+	cout<<"       _  _  _          _       _           _ _  _  _  _  _             _  _  _  _   _           _ _  _  _  _  _ _  _  _  _       ";
+	gotoxy(15,10);
+	cout<<"    _ (_)(_)(_) _     _(_)_    (_) _     _ (_|_)(_)(_)(_)(_)          _(_)(_)(_)(_)_(_)         (_|_)(_)(_)(_)(_|_)(_)(_)(_) _    ";
+	gotoxy(15,11);
+	cout<<"   (_)         (_)  _(_) (_)_  (_)(_)   (_)(_|_)                     (_)          (_|_)         (_|_)           (_)         (_)   ";
+	gotoxy(15,12);
+	cout<<"   (_)    _  _  _ _(_)     (_)_(_) (_)_(_) (_|_) _  _                (_)          (_|_)_       _(_|_) _  _      (_) _  _  _ (_)   ";
+	gotoxy(15,13);
+	cout<<"   (_)   (_)(_)(_|_) _  _  _ (_|_)   (_)   (_|_)(_)(_)               (_)          (_) (_)     (_) (_)(_)(_)     (_)(_)(_)(_)      ";
+	gotoxy(15,14);
+	cout<<"   (_)         (_|_)(_)(_)(_)(_|_)         (_|_)                     (_)          (_)  (_)   (_)  (_)           (_)   (_) _     ";
+	gotoxy(15,15);
+	cout<<"   (_) _  _  _ (_|_)         (_|_)         (_|_) _  _  _  _          (_)_  _  _  _(_)   (_)_(_)   (_) _  _  _  _(_)      (_) _   ";
+	gotoxy(15,16);
+	cout<<"      (_)(_)(_)(_|_)         (_|_)         (_|_)(_)(_)(_)(_)           (_)(_)(_)(_)       (_)     (_)(_)(_)(_)(_|_)         (_)   ";
+	gotoxy(70,18);
+	cout<<puntuacion;
+  }            
 //Suma de puntaje
 int sumaPuntos(int puntaje,int tiempo){
 	int total;
@@ -556,7 +575,6 @@ void enemigos(bool destruidos[21], int x){
 			cout<<ene;
 		}
 	}
-	color(9);
  }
 void enemigos2(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x6,int x7,int x8,int x9,int x10){
 	color(14);
@@ -579,7 +597,6 @@ void enemigos2(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 			}
 		}
 	}	
-	
 	if(destruidos[2]==true){
 		if(x3+10<150){
 			if(x3+10>10){
@@ -590,7 +607,6 @@ void enemigos2(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 			}
 		}
 	}
-	
 	if(destruidos[3]==true){
 		if(x4+10<150){
 			if(x4+10>10){
@@ -601,7 +617,6 @@ void enemigos2(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 			}
 		}
 	}
-	
 	if(destruidos[4]==true){
 		if(x5+10<150){
 			if(x5+10>10){
@@ -622,6 +637,7 @@ void enemigos2(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 			}
 		}
 	}
+	
 	if(destruidos[6]==true){
 		if(x7+10<150){
 			if(x7+10>10){
@@ -674,7 +690,6 @@ void enemigos3(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 			cout<<" ";
 			gotoxy(x+10,y);
 			cout<<ene;
-			
 		}
 	}
 	if(destruidos[1]==true){
@@ -684,11 +699,9 @@ void enemigos3(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x2+10,y2);
 				cout<<ene;
-				
 			}
 		}
-	}	
-	
+	}
 	if(destruidos[2]==true){
 		if(x3+10<150){
 			if(x3+10>10){
@@ -696,7 +709,6 @@ void enemigos3(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x3+10,y3);
 				cout<<ene;
-			
 			}
 		}
 	}
@@ -706,8 +718,7 @@ void enemigos3(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				gotoxy(x4+9,y4);
 				cout<<" ";
 				gotoxy(x4+10,y4);
-				cout<<ene;
-				
+				cout<<ene;	
 			}
 		}
 	}
@@ -717,8 +728,7 @@ void enemigos3(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				gotoxy(x5+9,y5);
 				cout<<" ";
 				gotoxy(x5+10,y5);
-				cout<<ene;
-				
+				cout<<ene;	
 			}
 		}
 	}
@@ -785,7 +795,6 @@ void enemigos4(bool destruidos[20],int x,int y,int x2,int x3,int x4,int x5,int x
 			cout<<" ";
 			gotoxy(x+10,fila1);
 			cout<<ene;
-			
 		}
 	}
 	if(destruidos[1]==true){
@@ -883,14 +892,12 @@ void enemigos4(bool destruidos[20],int x,int y,int x2,int x3,int x4,int x5,int x
 			}
 		}
 	}
-	
 	if(destruidos[10]==true){
 		if(x11+10<150){
 			gotoxy(x11+9,fila1);
 			cout<<" ";
 			gotoxy(x11+10,fila1);
 			cout<<ene;
-			
 		}
 	}
 	if(destruidos[11]==true){
@@ -903,7 +910,6 @@ void enemigos4(bool destruidos[20],int x,int y,int x2,int x3,int x4,int x5,int x
 			}
 		}
 	}	
-	
 	if(destruidos[12]==true){
 		if(x13+10<150){
 			if(x13+10>10){
@@ -914,7 +920,6 @@ void enemigos4(bool destruidos[20],int x,int y,int x2,int x3,int x4,int x5,int x
 			}
 		}
 	}
-	
 	if(destruidos[13]==true){
 		if(x14+10<150){
 			if(x14+10>10){
@@ -939,7 +944,6 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 			cout<<" ";
 			gotoxy(x+10,y);
 			cout<<ene;
-			
 		}
 	}
 	if(destruidos[1]==true){
@@ -949,11 +953,9 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x2+10,y2);
 				cout<<ene;
-				
 			}
 		}
 	}	
-	
 	if(destruidos[2]==true){
 		if(x3+10<150){
 			if(x3+10>10){
@@ -961,11 +963,9 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x3+10,y3);
 				cout<<ene;
-			
 			}
 		}
 	}
-	
 	if(destruidos[3]==true){
 		if(x4+10<150){
 			if(x4+10>10){
@@ -973,11 +973,9 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x4+10,y4);
 				cout<<ene;
-				
 			}
 		}
 	}
-	
 	if(destruidos[4]==true){
 		if(x5+10<150){
 			if(x5+10>10){
@@ -985,11 +983,9 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x5+10,y5);
 				cout<<ene;
-				
 			}
 		}
 	}
-	
 	if(destruidos[5]==true){
 		if(x6+10<150){
 			if(x6+10>10){
@@ -997,11 +993,9 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x6+10,y6);
 				cout<<ene;
-				
 			}
 		}
 	}
-	
 	if(destruidos[6]==true){
 		if(x7+10<150){
 			if(x7+10>10){
@@ -1009,7 +1003,6 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x7+10,y7);
 				cout<<ene;
-				
 			}
 		}
 	}
@@ -1020,7 +1013,6 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x8+10,y8);
 				cout<<ene;
-				
 			}
 		}
 	}
@@ -1031,7 +1023,6 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x9+10,y9);
 				cout<<ene;
-				
 			}
 		}
 	}
@@ -1042,11 +1033,9 @@ void enemigos5(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x10+10,y10);
 				cout<<ene;
-			
 			}
 		}
 	}
-	
  	gotoxy(149,y10);
 	cout<<" ";
 }
@@ -1059,7 +1048,6 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 			cout<<" ";
 			gotoxy(x+10,y);
 			cout<<ene;
-			
 		}
 	}
 	if(destruidos[1]==true){
@@ -1069,11 +1057,9 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x2+10,y2);
 				cout<<ene;
-				
 			}
 		}
-	}	
-	
+	}
 	if(destruidos[2]==true){
 		if(x3+10<150){
 			if(x3+10>10){
@@ -1081,11 +1067,9 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x3+10,y3);
 				cout<<ene;
-			
 			}
 		}
 	}
-	
 	if(destruidos[3]==true){
 		if(x4+10<150){
 			if(x4+10>10){
@@ -1093,11 +1077,9 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x4+10,y4);
 				cout<<ene;
-				
 			}
 		}
 	}
-	
 	if(destruidos[4]==true){
 		if(x5+10<150){
 			if(x5+10>10){
@@ -1105,11 +1087,9 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x5+10,y5);
 				cout<<ene;
-				
 			}
 		}
 	}
-	
 	if(destruidos[5]==true){
 		if(x6+10<150){
 			if(x6+10>10){
@@ -1117,19 +1097,16 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x6+10,y6);
 				cout<<ene;
-				
 			}
 		}
 	}
-	
 	if(destruidos[6]==true){
 		if(x7+10<150){
 			if(x7+10>10){
 				gotoxy(x7+9,y7);
 				cout<<" ";
 				gotoxy(x7+10,y7);
-				cout<<ene;
-				
+				cout<<ene;				
 			}
 		}
 	}
@@ -1140,7 +1117,6 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				cout<<" ";
 				gotoxy(x8+10,y8);
 				cout<<ene;
-				
 			}
 		}
 	}
@@ -1150,8 +1126,7 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				gotoxy(x9+9,y9);
 				cout<<" ";
 				gotoxy(x9+10,y9);
-				cout<<ene;
-				
+				cout<<ene;				
 			}
 		}
 	}
@@ -1161,28 +1136,10 @@ void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 				gotoxy(x10+9,y10);
 				cout<<" ";
 				gotoxy(x10+10,y10);
-				cout<<ene;
-			
+				cout<<ene;			
 			}
 		}
 	}
-	
- 	gotoxy(149,y);
-	cout<<" ";
-	gotoxy(149,y2);
-	cout<<" ";
-	gotoxy(149,y3);
-	cout<<" ";
-	gotoxy(149,y4);
-	cout<<" ";
-	gotoxy(149,y5);
-	cout<<" ";
-	gotoxy(149,y6);
-	cout<<" ";
-	gotoxy(149,y7);
-	cout<<" ";
-	gotoxy(149,y8);
-	cout<<" ";
 	gotoxy(149,y9);
 	cout<<" ";
 	gotoxy(149,y10);
@@ -1363,14 +1320,16 @@ void Nivel6(int puntuacion, int vidasNave){
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
 					cout<<bala;
-					//char soundfile[] = "LASRLIT3.wav";
-			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+					char soundfile[] = "Sonidos/LASRLIT3.wav";
+			    	PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 						contador(tiempo);
 						if(destruidos[0]==true){
 						   	if(yBala==y1){
 						   		if(xBala==x1+10 or xBala==x1+11){
-						   			destruidos[0]=false;
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
+									destruidos[0]=false;
 						   			puntuacion+=50;
 						   			break;
 								}
@@ -1379,7 +1338,9 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[1]==true){
 							if(yBala==y2){
 						   		if(xBala==x2+10 or xBala==x2+11){
-						   			destruidos[1]=false;
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
+									destruidos[1]=false;
 						   			puntuacion+=50;
 						   			break;
 								}
@@ -1388,7 +1349,9 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[2]==true){
 							if(yBala==y3){
 						   		if(xBala==x3+10 or xBala==x3+11){
-						   			destruidos[2]=false;
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
+									destruidos[2]=false;
 						   			puntuacion+=50;
 						   			break;
 								}
@@ -1397,7 +1360,9 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[3]==true){
 							if(yBala==y4){
 						   		if(xBala==x4+10 or xBala==x4+11){
-						   			destruidos[3]=false;
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
+									destruidos[3]=false;
 						   			puntuacion+=50;
 						   			break;
 								}
@@ -1406,7 +1371,9 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[4]==true){
 							if(yBala==y5){
 						   		if(xBala==x5+10 or xBala==x5+11){
-						   			destruidos[4]=false;
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
+									destruidos[4]=false;
 						   			puntuacion+=50;
 						   			break;
 								}
@@ -1415,6 +1382,8 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[5]==true){
 							if(yBala==y6){
 						   		if(xBala==x6+10 or xBala==x6+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[5]=false;
 						   			puntuacion+=50;
 						   			break;
@@ -1424,6 +1393,8 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[6]==true){
 							if(yBala==y7){
 						   		if(xBala==x7+10 or xBala==x7+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[6]=false;
 						   			puntuacion+=50;
 						   			break;
@@ -1433,6 +1404,8 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[7]==true){
 							if(yBala==y8){
 						   		if(xBala==x8+10 or xBala==x8+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[7]=false;
 						   			puntuacion+=50;
 						   			break;
@@ -1442,6 +1415,8 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[8]==true){
 							if(yBala==y9){
 						   		if(xBala==x9+10 or xBala==x9+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[8]=false;
 						   			puntuacion+=50;
 						   			break;
@@ -1451,6 +1426,8 @@ void Nivel6(int puntuacion, int vidasNave){
 						if(destruidos[9]==true){
 							if(yBala==y10){
 						   		if(xBala==x10+10 or xBala==x10+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[9]=false;
 						   			puntuacion+=50;
 						   			break;
@@ -1532,6 +1509,10 @@ void Nivel6(int puntuacion, int vidasNave){
 			vidasNave-=1;
 			Sleep(1000);
 			Nivel6(puntuacion,vidasNave);
+		}
+		if(vidasNave<1){
+			system("cls");
+			GameOver(puntuacion);
 		}
 	}
 }
@@ -1704,13 +1685,15 @@ void Nivel5(int puntuacion, int vidasNave){
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
 					cout<<bala;
-					//char soundfile[] = "LASRLIT3.wav";
-			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+					char soundfile[] = "Sonidos/LASRLIT3.wav";
+			    	PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 						contador(tiempo);
 						if(destruidos[0]==true){
 							if(yBala==y1){
 						   		if(xBala==x1+10 or xBala==x1+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[0]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1721,6 +1704,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[1]==true){
 							if(yBala==y2){
 						   		if(xBala==x2+10 or xBala==x2+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[1]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1731,6 +1716,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[2]==true){
 							if(yBala==y3){
 						   		if(xBala==x3+10 or xBala==x3+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[2]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1741,6 +1728,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[3]==true){
 							if(yBala==y4){
 						   		if(xBala==x4+10 or xBala==x4+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[3]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1751,6 +1740,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[4]==true){
 							if(yBala==y5){
 						   		if(xBala==x5+10 or xBala==x5+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[4]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1761,6 +1752,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[5]==true){
 							if(yBala==y6){
 						   		if(xBala==x6+10 or xBala==x6+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[5]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1771,6 +1764,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[6]==true){
 							if(yBala==y7){
 						   		if(xBala==x7+10 or xBala==x7+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[6]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1781,6 +1776,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[7]==true){
 							if(yBala==y8){
 						   		if(xBala==x8+10 or xBala==x8+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[7]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1791,6 +1788,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[8]==true){
 							if(yBala==y9){
 						   		if(xBala==x9+10 or xBala==x9+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[8]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1801,6 +1800,8 @@ void Nivel5(int puntuacion, int vidasNave){
 						if(destruidos[9]==true){
 							if(yBala==y10){
 						   		if(xBala==x10+10 or xBala==x10+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[9]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1884,6 +1885,10 @@ void Nivel5(int puntuacion, int vidasNave){
 			vidasNave-=1;
 			Sleep(1000);
 			Nivel5(puntuacion,vidasNave);
+		}
+		if(vidasNave<1){
+			system("cls");
+			GameOver(puntuacion);
 		}
 	}
 }
@@ -1974,13 +1979,15 @@ void Nivel4(int puntuacion, int vidasNave){
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
 					cout<<bala;
-					//char soundfile[] = "LASRLIT3.wav";
-			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+					char soundfile[] = "Sonidos/LASRLIT3.wav";
+			    	PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 						contador(tiempo);
 						if(destruidos[0]==true){
 						   	if(yBala==y1){
 						   		if(xBala==x1+10 or xBala==x1+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[0]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -1991,6 +1998,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[1]==true){
 							if(yBala==y2){
 						   		if(xBala==x2+10 or xBala==x2+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[1]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2001,6 +2010,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[2]==true){
 							if(yBala==y1){
 						   		if(xBala==x3+10 or xBala==x3+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[2]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2011,6 +2022,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[3]==true){
 							if(yBala==y2){
 						   		if(xBala==x4+10 or xBala==x4+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[3]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2021,6 +2034,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[4]==true){
 							if(yBala==y1){
 						   		if(xBala==x5+10 or xBala==x5+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[4]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2031,6 +2046,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[5]==true){
 							if(yBala==y2){
 						   		if(xBala==x6+10 or xBala==x6+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[5]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2041,6 +2058,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[6]==true){
 							if(yBala==y1){
 						   		if(xBala==x7+10 or xBala==x7+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[6]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2051,6 +2070,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[7]==true){
 							if(yBala==y2){
 						   		if(xBala==x8+10 or xBala==x8+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[7]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2061,6 +2082,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[8]==true){
 							if(yBala==y1){
 						   		if(xBala==x9+10 or xBala==x9+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[8]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2071,6 +2094,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[9]==true){
 							if(yBala==y2){
 						   		if(xBala==x10+10 or xBala==x10+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[9]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2081,6 +2106,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[10]==true){
 							if(yBala==y1){
 						   		if(xBala==x11+10 or xBala==x11+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[10]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2091,6 +2118,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[11]==true){
 							if(yBala==y2){
 						   		if(xBala==x12+10 or xBala==x12+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[11]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2101,6 +2130,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[12]==true){
 							if(yBala==y1){
 						   		if(xBala==x13+10 or xBala==x13+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[12]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2111,6 +2142,8 @@ void Nivel4(int puntuacion, int vidasNave){
 						if(destruidos[13]==true){
 							if(yBala==y2){
 						   		if(xBala==x14+10 or xBala==x14+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[13]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2195,6 +2228,10 @@ void Nivel4(int puntuacion, int vidasNave){
 			vidasNave-=1;
 			Sleep(1000);
 			Nivel4(puntuacion,vidasNave);
+		}
+		if(vidasNave<1){
+			system("cls");
+			GameOver(puntuacion);
 		}
 	}
 }
@@ -2356,13 +2393,15 @@ void Nivel3(int puntuacion, int vidasNave){
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
 					cout<<bala;
-					//char soundfile[] = "LASRLIT3.wav";
-			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+					char soundfile[] = "Sonidos/LASRLIT3.wav";
+			    	PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 						contador(tiempo);
 					   	if(destruidos[0]==true){
 						   if(yBala==y1){
 					   		if(xBala==x1+10 or xBala==x1+11){
+					   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 					   			destruidos[0]=false;
 					   			puntuacion+=50;
 					   			cont++;
@@ -2372,6 +2411,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						}if(destruidos[1]==true){
 							if(yBala==y2){
 					   			if(xBala==x2+10 or xBala==x2+11){
+					   				char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[1]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2382,6 +2423,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						if(destruidos[2]==true){
 							if(yBala==y3){
 						   		if(xBala==x3+10 or xBala==x3+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[2]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2392,6 +2435,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						if(destruidos[3]==true){
 							if(yBala==y4){
 						   		if(xBala==x4+10 or xBala==x4+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[3]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2402,6 +2447,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						if(destruidos[4]==true){
 							if(yBala==y5){
 						   		if(xBala==x5+10 or xBala==x5+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[4]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2412,6 +2459,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						if(destruidos[5]==true){
 							if(yBala==y6){
 						   		if(xBala==x6+10 or xBala==x6+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[5]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2422,6 +2471,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						if(destruidos[6]==true){
 							if(yBala==y7){
 						   		if(xBala==x7+10 or xBala==x7+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[6]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2432,6 +2483,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						if(destruidos[7]==true){
 							if(yBala==y8){
 						   		if(xBala==x8+10 or xBala==x8+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[7]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2442,6 +2495,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						if(destruidos[8]==true){
 							if(yBala==y9){
 						   		if(xBala==x9+10 or xBala==x9+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[8]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2452,6 +2507,8 @@ void Nivel3(int puntuacion, int vidasNave){
 						if(destruidos[9]==true){
 							if(yBala==y10){
 						   		if(xBala==x10+10 or xBala==x10+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[9]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2536,6 +2593,10 @@ void Nivel3(int puntuacion, int vidasNave){
 			Sleep(1000);
 			Nivel3(puntuacion,vidasNave);
 		}
+		if(vidasNave<1){
+			system("cls");
+			GameOver(puntuacion);
+		}
 	}
 }
 void Nivel2(int puntuacion, int vidasNave){
@@ -2614,13 +2675,15 @@ void Nivel2(int puntuacion, int vidasNave){
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
 					cout<<bala;
-					//char soundfile[] = "LASRLIT3.wav";
-			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+					char soundfile[] = "Sonidos/LASRLIT3.wav";
+			    	PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 						contador(tiempo);
 						if(destruidos[0]==true){
 						   	if(yBala==y1){
 						   		if(xBala==x1+10 or xBala==x1+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[0]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2631,6 +2694,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[1]==true){
 							if(yBala==y1){
 						   		if(xBala==x2+10 or xBala==x2+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[1]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2641,6 +2706,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[2]==true){
 							if(yBala==y1){
 						   		if(xBala==x3+10 or xBala==x3+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[2]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2651,6 +2718,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[3]==true){
 							if(yBala==y1){
 						   		if(xBala==x4+10 or xBala==x4+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[3]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2661,6 +2730,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[4]==true){
 							if(yBala==y1){
 						   		if(xBala==x5+10 or xBala==x5+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[4]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2671,6 +2742,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[5]==true){
 							if(yBala==y1){
 						   		if(xBala==x6+10 or xBala==x6+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[5]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2681,6 +2754,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[6]==true){
 							if(yBala==y1){
 						   		if(xBala==x7+10 or xBala==x7+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[6]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2691,6 +2766,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[7]==true){
 							if(yBala==y1){
 						   		if(xBala==x8+10 or xBala==x8+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[7]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2701,6 +2778,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[8]==true){
 							if(yBala==y1){
 						   		if(xBala==x9+10 or xBala==x9+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[8]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2711,6 +2790,8 @@ void Nivel2(int puntuacion, int vidasNave){
 						if(destruidos[9]==true){
 							if(yBala==y1){
 						   		if(xBala==x10+10 or xBala==x10+11){
+						   			char soundfile[] = "Sonidos/preview.wav";
+			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[9]=false;
 						   			puntuacion+=50;
 						   			cont++;
@@ -2794,6 +2875,10 @@ void Nivel2(int puntuacion, int vidasNave){
 			Sleep(1000);
 			Nivel2(puntuacion,vidasNave);
 		}
+		if(vidasNave<1){
+			system("cls");
+			GameOver(puntuacion);
+		}
 	}
 }
 void Nivel1(int puntuacion, int vidasNave){
@@ -2856,8 +2941,8 @@ void Nivel1(int puntuacion, int vidasNave){
 			    	xBala=x,yBala=y;
 			    	gotoxy(xBala,yBala-1);
 					cout<<bala;
-					//char soundfile[] = "LASRLIT3.wav";
-			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+					char soundfile[] = "Sonidos/LASRLIT3.wav";
+			    	PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
 			    	for(int yBala=y-1;yBala>-2;--yBala){
 						contador(tiempo);
 						gotoxy(xBala,yBala+1);
@@ -2869,6 +2954,8 @@ void Nivel1(int puntuacion, int vidasNave){
 						//Fila 1
 						if(yBala==2){
 							if(xBala==x1+10){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[0]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2876,6 +2963,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+38){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[1]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2883,6 +2972,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+66){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[2]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2890,6 +2981,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+94){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[3]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2897,6 +2990,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+122){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[4]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2904,6 +2999,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+150){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[5]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2914,6 +3011,8 @@ void Nivel1(int puntuacion, int vidasNave){
 						//Fila 2
 						if(yBala==4){
 							if(xBala==x1+17){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[6]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2921,6 +3020,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+31){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[7]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2928,6 +3029,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+45){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[8]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2935,6 +3038,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+59){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[9]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2942,6 +3047,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+73){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[10]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2949,6 +3056,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+87){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[11]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2956,6 +3065,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+101){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[12]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2963,6 +3074,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+115){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[13]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2970,6 +3083,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+129){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[14]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2977,6 +3092,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+144){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[15]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2987,6 +3104,8 @@ void Nivel1(int puntuacion, int vidasNave){
 						//Fila 3
 						if(yBala==6){
 							if(xBala==x1+24){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[16]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -2994,6 +3113,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+52){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[17]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -3001,6 +3122,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+80){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[18]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -3008,6 +3131,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+108){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[19]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -3015,6 +3140,8 @@ void Nivel1(int puntuacion, int vidasNave){
 								break;
 							}
 							if(xBala==x1+136){
+								char soundfile[] = "Sonidos/preview.wav";
+			    				PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 								destruidos[20]=false;
 								enemigos(destruidos,x1);
 								cont++;
@@ -3073,7 +3200,6 @@ void Nivel1(int puntuacion, int vidasNave){
 		cout<<puntuacion;
 		//Si destruye los 21 objetivos
 		if(cont==21){
-			run=false;
 			system("cls");
 			gotoxy(30,15);
 			cout<<"Avanzando al sig nivel";
@@ -3087,6 +3213,10 @@ void Nivel1(int puntuacion, int vidasNave){
 			vidasNave-=1;
 			Sleep(1000);
 			Nivel1(puntuacion,vidasNave);
+		}
+		if(vidasNave<1){
+			system("cls");
+			GameOver(puntuacion);
 		}
 	}
 }
@@ -3147,7 +3277,7 @@ int main(){
             	//Arriba
             	case 72:
             		//Validacion de flechita arriba
-            		//PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
+            		PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
             		if(pantalla!=3){
             			if(y1>19){
 		            		y1=y1-7;
@@ -3162,7 +3292,7 @@ int main(){
             	//Abajo
             	case 80:
             		//Validacion de flechita abajo
-            		//PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
+            		PlaySound((LPCSTR)menu, NULL, SND_FILENAME | SND_ASYNC ); 
             		if(pantalla!=3){
 						if(y1<33){
 							y1=y1+7;
@@ -3173,7 +3303,7 @@ int main(){
             		break;
             	//Enter
 				case 13:
-					//PlaySound((LPCSTR)enter, NULL, SND_FILENAME | SND_ASYNC ); 
+					PlaySound((LPCSTR)enter, NULL, SND_FILENAME | SND_ASYNC ); 
 					if(y1==19){
 						if(pantalla==1){
 							pantalla=3;
