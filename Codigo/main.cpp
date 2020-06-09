@@ -384,7 +384,32 @@ void GameOver(int puntuacion){
 	cout<<"      (_)(_)(_)(_|_)         (_|_)         (_|_)(_)(_)(_)(_)           (_)(_)(_)(_)       (_)     (_)(_)(_)(_)(_|_)         (_)   ";
 	gotoxy(70,18);
 	cout<<puntuacion;
+	getch();
   }            
+void VictoriRoyale(int puntuacion){
+	system("cls");
+	int y=20;
+	color(4);	
+	gotoxy(y,9);
+	cout<<" /$$    /$$ /$$             /$$                         /$$          ";
+	gotoxy(y,10);
+	cout<<"| $$   | $$|__/            | $$                        |__/          ";
+	gotoxy(y,11);
+	cout<<"| $$   | $$ /$$  /$$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$  /$$  /$$$$$$ ";
+	gotoxy(y,12);
+	cout<<"|  $$ / $$/| $$ /$$_____/|_  $$_/   /$$__  $$ /$$__ $$|  $$ |____  $$";
+	gotoxy(y,13);
+	cout<<"  \  $$ $$/ | $$| $$        | $$    | $$  \  $$| $$  \__/|  $$  /$$$$$$$";
+	gotoxy(y,14);
+	cout<<"   \  $$$/  | $$| $$        | $$ /$$| $$  | $$| $$      | $$ /$$__  $$";
+	gotoxy(y,15);
+	cout<<"    \  $/   | $$|  $$$$$$$  |  $$$$/|  $$$$$$/| $$      | $$|  $$$$$$$";
+	gotoxy(y,16);
+	cout<<"     \_/    |__/ \_______/   \___/   \______/ |__/      |__/ \_______/";
+	gotoxy(70,20);
+	cout<<"Puntuacion: "<<puntuacion;
+	getch();
+}
 //Suma de puntaje
 int sumaPuntos(int puntaje,int tiempo){
 	int total;
@@ -1294,6 +1319,11 @@ void Nivel6(int puntuacion, int vidasNave){
 			tecla = getch();
 			//cout<<tecla;
 			switch(tecla){
+				case 13:
+					system("pause");
+					system("cls");
+					vidas(vidasNave);
+					break;
 				//Derecha
             	case 77:
 					if(x<159){
@@ -1331,6 +1361,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 									destruidos[0]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1342,6 +1373,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 									destruidos[1]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1353,6 +1385,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 									destruidos[2]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1364,6 +1397,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 									destruidos[3]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1375,6 +1409,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 									destruidos[4]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1386,6 +1421,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[5]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1397,6 +1433,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[6]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1408,6 +1445,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[7]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1419,6 +1457,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[8]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1430,6 +1469,7 @@ void Nivel6(int puntuacion, int vidasNave){
 			    					PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC );
 						   			destruidos[9]=false;
 						   			puntuacion+=50;
+						   			cont++;
 						   			break;
 								}
 							}
@@ -1497,13 +1537,10 @@ void Nivel6(int puntuacion, int vidasNave){
 		cout<<puntuacion;
 		//Si destruye los 10 objetivos
 		if(cont==10){
-			run=false;
-			system("cls");
-			gotoxy(30,15);
-			cout<<"Avanzando al sig nivel";
 			Sleep(1500);
 			system("cls");
-			Nivel6(puntuacion,vidasNave);
+			VictoriRoyale(puntuacion);
+			run=false;
 		}
 		if (tiempo==91){
 			vidasNave-=1;
@@ -1633,7 +1670,7 @@ void Nivel5(int puntuacion, int vidasNave){
 			}	
 		}
 //			 vvvv   Modificar la velocidad del tiempo
-		if(n%1200==0){tiempo++;contador(tiempo);}
+		if(n%1000==0){tiempo++;contador(tiempo);}
 //			 vvvv   Modificar la velocidad del los enemigos
 		if(n%100==0){
 			x1++;	x6++;
@@ -1658,6 +1695,11 @@ void Nivel5(int puntuacion, int vidasNave){
 			tecla = getch();
 			//cout<<tecla;
 			switch(tecla){
+				case 13:
+					system("pause");
+					system("cls");
+					vidas(vidasNave);
+					break;
 				//Derecha
             	case 77:
 					if(x<159){
@@ -1887,7 +1929,9 @@ void Nivel5(int puntuacion, int vidasNave){
 			Nivel5(puntuacion,vidasNave);
 		}
 		if(vidasNave<1){
+			run=false;
 			system("cls");
+			Sleep(1000);
 			GameOver(puntuacion);
 		}
 	}
@@ -1915,10 +1959,11 @@ void Nivel4(int puntuacion, int vidasNave){
 	contador(tiempo);
 	enemigos4(destruidos,x1,y1,x2, x3, x4, x5, x6, x7,x8, x9, x10,x11,x12,x13,x14);
 	bool run=true;
+	vidas(vidasNave);
 	while(run){
 		color(9);
 //			 vvvv   Modificar la velocidad del tiempo
-		if(n%2000==0){tiempo++;contador(tiempo);}
+		if(n%1000==0){tiempo++;contador(tiempo);}
 //			 vvvv   Modificar la velocidad del los enemigos
 		if(n%170==0){
 			x1++;	x8++;
@@ -1947,8 +1992,14 @@ void Nivel4(int puntuacion, int vidasNave){
 		if (_kbhit())
         {
 			tecla = getch();
+			
 			//cout<<tecla;
 			switch(tecla){
+				case 13:
+					system("pause");
+					system("cls");
+					vidas(vidasNave);
+					break;
 				//Derecha
             	case 77:
 					if(x<159){
@@ -2201,6 +2252,7 @@ void Nivel4(int puntuacion, int vidasNave){
 						cout<<nave;
 					}
 					system("cls");
+					vidas(vidasNave);
 					contador(tiempo);
 					color(7);
 					gotoxy(80,37);
@@ -2342,7 +2394,7 @@ void Nivel3(int puntuacion, int vidasNave){
 				}
 			}
 //			 vvvv   Modificar la velocidad del tiempo
-		if(n%2000==0){tiempo++;contador(tiempo);}
+		if(n%1000==0){tiempo++;contador(tiempo);}
 //			 vvvv   Modificar la velocidad del los enemigos
 		if(n%150==0){
 			x1++;	x6++;
@@ -2367,6 +2419,11 @@ void Nivel3(int puntuacion, int vidasNave){
 			tecla = getch();
 			//cout<<tecla;
 			switch(tecla){
+				case 13:
+					system("pause");
+					system("cls");
+					vidas(vidasNave);
+					break;
 				//Derecha
             	case 77:
 					if(x<159){
@@ -2649,6 +2706,11 @@ void Nivel2(int puntuacion, int vidasNave){
 			tecla = getch();
 			//cout<<tecla;
 			switch(tecla){
+				case 13:
+					system("pause");
+					system("cls");
+					vidas(vidasNave);
+					break;
 				//Derecha
             	case 77:
 					if(x<159){
@@ -2913,8 +2975,13 @@ void Nivel1(int puntuacion, int vidasNave){
         {
 			tecla = getch();
 			switch(tecla){
+            	case 13:
+					system("pause");
+					system("cls");
+					vidas(vidasNave);
+					break;
             	//Derecha
-            	case 77:
+				case 77:
 					if(x<159){
 						gotoxy(x-1,y);
 	            		cout<<" ";
@@ -3269,7 +3336,6 @@ int main(){
 		if (_kbhit())
         {
 			tecla = getch();
-            //cout<<tecla;
 			switch(tecla){
             	//Derecha
             	case 77:
@@ -3301,7 +3367,7 @@ int main(){
 						arrabj=1;
 					}
             		break;
-            	//Enter
+            	//Espacio
 				case 13:
 					PlaySound((LPCSTR)enter, NULL, SND_FILENAME | SND_ASYNC ); 
 					if(y1==19){

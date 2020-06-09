@@ -1,0 +1,3 @@
+C:/Users/alexp/Desktop/Proyecto_Final_Megamania/cmake-build-debug/CMakeFiles/Proyecto_Final_Megamania.dir
+C:/Users/alexp/Desktop/Proyecto_Final_Megamania/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/alexp/Desktop/Proyecto_Final_Megamania/cmake-build-debug/CMakeFiles/rebuild_cache.dir
