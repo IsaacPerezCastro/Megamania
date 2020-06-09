@@ -385,6 +385,8 @@ void GameOver(int puntuacion){
 	gotoxy(70,18);
 	cout<<puntuacion;
 	getch();
+	exit(0);
+	system("cls");
   }            
 void VictoriRoyale(int puntuacion){
 	system("cls");
@@ -409,6 +411,8 @@ void VictoriRoyale(int puntuacion){
 	gotoxy(70,20);
 	cout<<"Puntuacion: "<<puntuacion;
 	getch();
+	exit(0);
+	system("cls");
 }
 //Suma de puntaje
 int sumaPuntos(int puntaje,int tiempo){
