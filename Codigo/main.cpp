@@ -622,7 +622,6 @@ void enemigos2(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x
 			}
 		}
 	}
-	
 	if(destruidos[6]==true){
 		if(x7+10<150){
 			if(x7+10>10){
