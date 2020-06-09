@@ -1,0 +1,455 @@
+
+void enemigos6(bool destruidos[10],int x,int y,int x2,int x3,int x4,int x5,int x6,int x7,int x8,int x9,int x10,int y2,int y3,int y4,int y5,int y6,int y7,int y8,int y9,int y10){
+	color(14);
+	char ene=220;
+	if(destruidos[0]==true){
+		if(x+10<150){
+			gotoxy(x+9,y);
+			cout<<" ";
+			gotoxy(x+10,y);
+			cout<<ene;
+			
+		}
+	}
+	if(destruidos[1]==true){
+		if(x2+10<150){
+			if(x2+10>10){
+				gotoxy(x2+9,y2);
+				cout<<" ";
+				gotoxy(x2+10,y2);
+				cout<<ene;
+				
+			}
+		}
+	}	
+	
+	if(destruidos[2]==true){
+		if(x3+10<150){
+			if(x3+10>10){
+				gotoxy(x3+9,y3);
+				cout<<" ";
+				gotoxy(x3+10,y3);
+				cout<<ene;
+			
+			}
+		}
+	}
+	
+	if(destruidos[3]==true){
+		if(x4+10<150){
+			if(x4+10>10){
+				gotoxy(x4+9,y4);
+				cout<<" ";
+				gotoxy(x4+10,y4);
+				cout<<ene;
+				
+			}
+		}
+	}
+	
+	if(destruidos[4]==true){
+		if(x5+10<150){
+			if(x5+10>10){
+				gotoxy(x5+9,y5);
+				cout<<" ";
+				gotoxy(x5+10,y5);
+				cout<<ene;
+				
+			}
+		}
+	}
+	
+	if(destruidos[5]==true){
+		if(x6+10<150){
+			if(x6+10>10){
+				gotoxy(x6+9,y6);
+				cout<<" ";
+				gotoxy(x6+10,y6);
+				cout<<ene;
+				
+			}
+		}
+	}
+	
+	if(destruidos[6]==true){
+		if(x7+10<150){
+			if(x7+10>10){
+				gotoxy(x7+9,y7);
+				cout<<" ";
+				gotoxy(x7+10,y7);
+				cout<<ene;
+				
+			}
+		}
+	}
+	if(destruidos[7]==true){
+		if(x8+10<150){
+			if(x8+10>10){
+				gotoxy(x8+9,y8);
+				cout<<" ";
+				gotoxy(x8+10,y8);
+				cout<<ene;
+				
+			}
+		}
+	}
+	if(destruidos[8]==true){
+		if(x9+10<150){
+			if(x9+10>10){
+				gotoxy(x9+9,y9);
+				cout<<" ";
+				gotoxy(x9+10,y9);
+				cout<<ene;
+				
+			}
+		}
+	}
+	if(destruidos[9]==true){
+		if(x10+10<150){
+			if(x10+10>10){
+				gotoxy(x10+9,y10);
+				cout<<" ";
+				gotoxy(x10+10,y10);
+				cout<<ene;
+			
+			}
+		}
+	}
+	
+ 	gotoxy(149,y);
+	cout<<" ";
+	gotoxy(149,y2);
+	cout<<" ";
+	gotoxy(149,y3);
+	cout<<" ";
+	gotoxy(149,y4);
+	cout<<" ";
+	gotoxy(149,y5);
+	cout<<" ";
+	gotoxy(149,y6);
+	cout<<" ";
+	gotoxy(149,y7);
+	cout<<" ";
+	gotoxy(149,y8);
+	cout<<" ";
+	gotoxy(149,y9);
+	cout<<" ";
+	gotoxy(149,y10);
+	cout<<" ";
+}
+
+//Lvls
+
+void Nivel6(int puntuacion){
+	system("cls");
+	color(3);
+	gotoxy(80,37);
+	cout<<puntuacion;
+	color(9);
+	int tiempo=0;
+	bool destruidos[10]={true,true,true,true,true,true,true,true,true,true};
+	//Jugador
+	char nave=219,bala=221;
+	int tecla,cont=0;
+	int x=75,y=29;
+
+	int x1=0,x2=-10,x3=-20,x4=-30,x5=-40,x6=-50,x7=-60,x8=-70,x9=-80,x10=-90;
+	int y1=6,y2=9,y3=6,y4=9,y5=6,y6=9,y7=6,y8=9,y9=6,y10=9;
+	bool vuelta=true;
+	int xBala,yBala;
+	int n=0;
+	gotoxy(x,y);
+	cout<<nave;
+	contador(tiempo);
+	enemigos6(destruidos,x1,y1,x2, x3, x4, x5, x6, x7,x8, x9, x10,y2, y3, y4, y5, y6, y7,y8, y9, y10);
+	bool run=true;
+	while(run){
+		color(9);
+		
+		//Coaliciones con nave
+		if(x1+10==x and y==y1){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x2+10==x and y==y2){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x3+10==x and y==y3){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x4+10==x and y==y4){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x5+10==x and y==y5){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x6+10==x and y==y6){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x7+10==x and y==y7){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x8+10==x and y==y8){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x9+10==x and y==y9){
+			system("cls");
+			
+				run=false;
+				
+			}
+		if(x10+10==x and y==y10){
+			system("cls");
+			
+				run=false;
+				
+			}	
+		//
+		
+//			 vvvv   Modificar la velocidad del tiempo
+		if(n%2000==0){tiempo++;contador(tiempo);}
+//			 vvvv   Modificar la velocidad del los enemigos
+		if(n%150==0){
+			
+			
+			x1++;
+			x2++;
+			x3++;
+			x4++;
+			x5++;
+			x6++;
+			x7++;
+			x8++;
+			x9++;
+			x10++;
+				enemigos6(destruidos,x1,y1,x2, x3, x4, x5, x6, x7,x8, x9, x10,y2, y3, y4, y5, y6, y7,y8, y9, y10);
+		}
+		if(x1+10>150){x1=0;y1+=5;}
+		if(x2+10>150){x2=0;y2+=5;}
+		if(x3+10>150){x3=0;y3+=5;}
+		if(x4+10>150){x4=0;y4+=5;}
+		if(x5+10>150){x5=0;y5+=5;}
+		if(x6+10>150){x6=0;y6+=5;}
+		if(x7+10>150){x7=0;y7+=5;}
+		if(x8+10>150){x8=0;y8+=5;}
+		if(x9+10>150){x9=0;y9+=5;}
+		if(x10+10>150){x10=0;y10+=5;}
+		if (_kbhit())
+        {
+			tecla = getch();
+			//cout<<tecla;
+			switch(tecla){
+            	case 27:
+            		run=false;
+            		
+				//Derecha
+            	case 77:
+					if(x<159){
+						gotoxy(x-1,y);
+	            		cout<<" ";
+						x++;
+						
+					}
+        			gotoxy(x-1,y);
+            		cout<<" ";
+
+            		break;
+            	//Izquierda
+				case 75:
+					if(x>0){
+						gotoxy(x+1,y);
+	            		cout<<" ";
+						x--;
+					}
+					gotoxy(x+1,y);
+	            	cout<<" ";
+	            	
+            		break;
+            	//Espacio
+            
+				case 32:
+					color(4);
+			    	xBala=x,yBala=y;
+			    	gotoxy(xBala,yBala-1);
+					cout<<bala;
+					//char soundfile[] = "LASRLIT3.wav";
+			    	//PlaySound((LPCSTR)soundfile, NULL, SND_FILENAME | SND_ASYNC ); 
+			    	for(int yBala=y-1;yBala>-2;--yBala){
+						contador(tiempo);
+					   	if(yBala==y1){
+					   		if(xBala==x1+10){
+					   			destruidos[0]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y2){
+					   		if(xBala==x2+10){
+					   			destruidos[1]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y3){
+					   		if(xBala==x3+10){
+					   			destruidos[2]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y4){
+					   		if(xBala==x4+10){
+					   			destruidos[3]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y5){
+					   		if(xBala==x5+10){
+					   			destruidos[4]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y6){
+					   		if(xBala==x6+10){
+					   			destruidos[5]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y7){
+					   		if(xBala==x7+10){
+					   			destruidos[6]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y8){
+					   		if(xBala==x8+10){
+					   			destruidos[7]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y9){
+					   		if(xBala==x9+10){
+					   			destruidos[8]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(yBala==y10){
+					   		if(xBala==x10+10){
+					   			destruidos[9]=false;
+					   			puntuacion+=50;
+							}
+						}
+						if(vuelta==true){
+							vuelta=false;
+							x1++;
+							x2++;
+							x3++;
+							x4++;
+							x5++;
+							x6++;
+							x7++;
+							x8++;
+							x9++;
+							x10++;
+							enemigos6(destruidos,x1,y1,x2, x3, x4, x5, x6, x7,x8, x9, x10,y2, y3, y4, y5, y6, y7,y8, y9, y10);
+						}else{
+							vuelta=true;
+						}
+						gotoxy(xBala,yBala+1);
+						cout<<" ";
+						if (_kbhit())
+				        {
+							tecla = getch();
+							//cout<<tecla;
+							switch(tecla){
+				            	case 27:
+				            		run=false;
+				            		
+										//Derecha
+						            	case 77:
+											if(x<159){
+												gotoxy(x-1,y);
+							            		cout<<" ";
+							            	
+												x++;
+												
+											}
+						        			gotoxy(x-1,y);
+						            		cout<<" ";
+						            		
+						
+						            		break;
+						            	//Izquierda
+										case 75:
+											if(x>0){
+												gotoxy(x+1,y);
+							            		cout<<" ";
+												x--;
+											}
+											gotoxy(x+1,y);
+							            	cout<<" ";
+							            	
+						            		break;
+						   	}
+						}     
+						color(4);
+						gotoxy(xBala,yBala);
+						cout<<bala;
+						color(9);
+						gotoxy(x,y);
+						cout<<nave;
+					}
+					system("cls");
+					contador(tiempo);
+
+					color(7);
+					gotoxy(80,37);
+					cout<<puntuacion;
+            		break;
+    		}
+    	}
+    	gotoxy(x,y);
+		cout<<nave;
+		n++;
+		color(7);
+		gotoxy(80,37);
+		cout<<puntuacion;
+		//Si destruye los 21 objetivos
+		if(cont==21){
+			run=false;
+			system("cls");
+			gotoxy(30,15);
+			cout<<"Avanzando al sig nivel";
+			getch();
+			system("cls");
+			Nivel6(puntuacion);
+		}
+		if (tiempo==91){
+			run=false;
+			system("cls");
+			gotoxy(30,15);
+			cout<<"Fin del juego";
+		}
+	}
+}
+
